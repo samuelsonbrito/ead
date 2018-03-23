@@ -14,7 +14,8 @@ class UserTableSeeder extends Seeder
         App\User::create([
             'name' => 'Samuelson Brito',
             'email' => 'samuelson@descompila.com.br',
-            'password' => bcrypt('123456')
+            'password' => bcrypt('123456'),
+            'level' => 1
         ]);
     }
 }
