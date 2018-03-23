@@ -15,7 +15,7 @@ $this->get('me', 'Auth\AuthApiController@getAuthenticatedUser');
 $this->group(['prefix' => 'v1', 'namespace' => 'Api'], function(){
 
     $this->apiResource('courses', 'CourseController');
-
+    
 });
 
 
