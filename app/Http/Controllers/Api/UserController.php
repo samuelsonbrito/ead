@@ -26,4 +26,25 @@ class UserController extends Controller
 
         return response()->json($user, 201);
     }
+
+    public function verify(Request $request)
+    {
+        $user = User::where('email', $request->email)->first();
+
+        
+
+        if($user) {
+            if(password_verify($request->password, $user->password)) {
+                return response()->json([
+                    'success' => true,
+                    'user' => [
+                        'id' => $user->id,
+                        'email' => $user->email
+                    ]
+                ]);
+            }
+        }
+
+        return response()->json(['success' => false], 404);
+    }
 }

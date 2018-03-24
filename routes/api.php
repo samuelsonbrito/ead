@@ -1,10 +1,4 @@
 <?php
-/*
-$this->get('categories','Api\CategoryController@index');
-$this->post('categories','Api\CategoryController@store');
-$this->put('categories/{id}','Api\CategoryController@update');
-$this->delete('categories/{id}','Api\CategoryController@delete');
-*/
 
 $this->post('users','Api\UserController@store');
 
@@ -14,7 +8,10 @@ $this->get('me', 'Auth\AuthApiController@getAuthenticatedUser');
 
 $this->group(['prefix' => 'v1', 'namespace' => 'Api'], function(){
 
+    $this->apiResource('classrooms', 'ClassroomController');
+    $this->apiResource('modules', 'ModuleController');
     $this->apiResource('courses', 'CourseController');
+    $this->apiResource('orders', 'OrderController');
     
 });
 
