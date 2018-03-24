@@ -9,7 +9,7 @@ use App\Http\Requests\StoreUpdateModuleFormRequest;
 
 class ModuleController extends Controller
 {
-    private $module;
+    private $module, $totalPage = 3;
 
     public function __construct(Module $module)
     {
@@ -18,7 +18,7 @@ class ModuleController extends Controller
 
     public function index(Request $request)
     {
-        $module = $this->module->getResults();
+        $module = $this->module->getResults($request->all(), $this->totalPage);
 
         return response()->json($module);
     }
