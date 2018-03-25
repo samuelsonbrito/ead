@@ -23,8 +23,12 @@ class StoreUpdateModuleFormRequest extends FormRequest
      */
     public function rules()
     {
+        $id = $this->segment(3);
+        
         return [
-            "name" => "required|min:3|max:50|unique:modules,name,{$this->id},id"
+            "name" => "required|min:3|max:50|unique:modules,name,{$id},id",
+            "description" => "max:1000",
+            "course_id" => "required|exists:courses,id"
         ];
     }
 }
