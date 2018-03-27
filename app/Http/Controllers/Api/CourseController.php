@@ -34,7 +34,23 @@ class CourseController extends Controller
 
     public function store(StoreUpdateCourseFormRequest $request)
     {
-        $course = $this->course->create($request->all());
+        $data = $request->all();
+
+        if($request->hasFile('image') && $request->file('image')->isValid()){
+
+            $name = kebab_case($request->name);
+            $extension = $request->image->extension();
+
+            $fileName = "{$name}.{$extension}";
+            $data['image'] = $fileName;
+
+            $upload = $request->image->storeAs('courses', $fileName);
+
+            if(!$upload)
+                return response()->json(['error' => 'Fail_Upload'], 500);
+        }
+
+        $course = $this->course->create($data);
 
         return response()->json($course, 201);
     }
