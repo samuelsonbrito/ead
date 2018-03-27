@@ -6,10 +6,12 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Course;
 use App\Http\Requests\StoreUpdateCourseFormRequest;
+use Illuminate\Support\Facades\Storage;
 
 class CourseController extends Controller
 {
     private $course;
+    private $path = 'courses';
 
     public function __construct(Course $course)
     {
@@ -44,7 +46,7 @@ class CourseController extends Controller
             $fileName = "{$name}.{$extension}";
             $data['image'] = $fileName;
 
-            $upload = $request->image->storeAs('courses', $fileName);
+            $upload = $request->image->storeAs($this->path, $fileName);
 
             if(!$upload)
                 return response()->json(['error' => 'Fail_Upload'], 500);
@@ -62,7 +64,29 @@ class CourseController extends Controller
         if(!$course)            
             return response()->json(['error' => 'Not found'], 404);
 
-        $course->update($request->all());
+        $data = $request->all();
+
+        if($request->hasFile('image') && $request->file('image')->isValid()){
+
+            if($course->image){
+                if(Storage::exists("{$this->path}/{$course->image}"))
+                    Storage::delete("{$this->path}/{$course->image}");
+            }
+    
+            $name = kebab_case($request->name);
+            $extension = $request->image->extension();
+    
+            $fileName = "{$name}.{$extension}";
+            $data['image'] = $fileName;
+    
+            $upload = $request->image->storeAs($this->path, $fileName);
+    
+            if(!$upload)
+                return response()->json(['error' => 'Fail_Upload'], 500);
+
+        }
+
+        $course->update($data);
         
         return response()->json($course);
     }
