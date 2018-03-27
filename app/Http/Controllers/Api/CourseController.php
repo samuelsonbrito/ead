@@ -98,7 +98,11 @@ class CourseController extends Controller
         if(!$course)            
             return response()->json(['error' => 'Not found'], 404);
 
-        $course->delete();
+        if($course->delete())
+            if($course->image){
+                if(Storage::exists("{$this->path}/{$course->image}"))
+                    Storage::delete("{$this->path}/{$course->image}");
+            }
 
         return response()->json(['success' => 'true'], 204);
     }
