@@ -15,10 +15,10 @@
 
         <tbody>
 
-          <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
+          <tr v-for="(course, index) in courses.data" :key="index">
+            <td>{{ course.id }}</td>
+            <td>{{ course.name }}</td>
+            <td>Ação</td>
           </tr>
 
         </tbody>
@@ -36,7 +36,9 @@ export default {
   },
   data(){
     return {
-      courses: []
+      courses: {
+        data: []
+      }
     }
   },
   methods: {
