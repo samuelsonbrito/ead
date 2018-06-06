@@ -16,8 +16,8 @@ class CreateClassroomsTable extends Migration
         Schema::create('classrooms', function (Blueprint $table) {
             $table->increments('id');
             $table->string('description');
-            $table->string('video')->nullable();;
-            $table->integer('views')->nullable();;
+            $table->string('video')->nullable();
+            $table->integer('views')->nullable();
             $table->integer('module_id')->unsigned();
             $table->foreign('module_id')->references('id')->on('modules')->onDelete('cascade');
             $table->timestamps();

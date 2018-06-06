@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Course extends Model
 {
-    protected $fillable = ['name', 'description', 'image', 'user_id'];
+    protected $fillable = ['name', 'description', 'image', 'user_id', 'category_id'];
 
     public function getResults($name = null)
     {
