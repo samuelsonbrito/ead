@@ -25,7 +25,7 @@ class CategoryController extends Controller
 
     public function show($id)
     {
-        $category = $this->classroom->find($id);
+        $category = $this->category->find($id);
         if(!$category)            
             return response()->json(['error' => 'Not found'], 404);
 
@@ -36,7 +36,7 @@ class CategoryController extends Controller
     {
         $category = $this->category->create($request->all());
 
-        return response()->json($classroom, 201);
+        return response()->json($category, 201);
     }
 
     public function update(StoreUpdateCategoryFormRequest $request, $id)

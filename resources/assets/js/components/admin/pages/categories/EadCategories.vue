@@ -7,7 +7,7 @@
         <div class="row">
 
             <div class="col">
-                <router-link :to="{ name: 'admin.departments.create'}" class="btn btn-success">Cadastrar</router-link>
+                <router-link :to="{ name: 'admin.categories.create'}" class="btn btn-success">Cadastrar</router-link>
             </div>
 
             <div class="col">

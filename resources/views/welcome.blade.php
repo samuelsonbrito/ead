@@ -22,6 +22,7 @@
     </head>
     <body>
         <div id="app">
+            <vue-snotify></vue-snotify>
             <ead-preloader></ead-preloader>
             <router-view></<router-view>
         </div>
