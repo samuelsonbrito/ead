@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api\v1;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Course;
+use App\Models\Course;
 use App\Http\Requests\StoreUpdateCourseFormRequest;
 use Illuminate\Support\Facades\Storage;
 

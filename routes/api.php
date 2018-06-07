@@ -11,7 +11,8 @@ $this->group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function(){
     $this->apiResource('classrooms', 'ClassroomController');
     $this->apiResource('modules', 'ModuleController');
     $this->apiResource('courses', 'CourseController');
-    $this->apiResource('orders', 'OrderController');
+    $this->apiResource('sales', 'SaleController');
+    $this->apiResource('categories', 'CategoryController');
     
 });
 

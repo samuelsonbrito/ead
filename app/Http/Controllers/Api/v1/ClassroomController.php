@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api\v1;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Classroom;
+use App\Models\Classroom;
 use App\Http\Requests\StoreUpdateClassroomFormRequest;
 
 class ClassroomController extends Controller

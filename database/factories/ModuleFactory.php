@@ -1,7 +1,7 @@
 <?php
 
 use Faker\Generator as Faker;
-use App\Module;
+use App\Models\Module;
 
 $factory->define(Module::class, function (Faker $faker) {
     return [

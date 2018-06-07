@@ -11,10 +11,11 @@ class CourseTableSeeder extends Seeder
      */
     public function run()
     {
-        App\Course::create([
+        App\Models\Course::create([
             'name' => 'Curso de Teste',
             'description' => 'Uma descrição qualquer',
-            'user_id' => 1
+            'user_id' => 1,
+            'category_id' => 1,
         ]);
     }
 }

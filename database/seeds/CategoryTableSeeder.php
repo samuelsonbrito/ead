@@ -1,9 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Models\Module;
 
-class ModuleTableSeeder extends Seeder
+class CategoryTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,6 +11,8 @@ class ModuleTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Module::class, 4)->create();
+        App\Models\Category::create([
+            'name' => 'Programação',
+        ]);
     }
 }

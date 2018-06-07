@@ -16,21 +16,21 @@ class CreateCoursesTable extends Migration
         Schema::create('courses', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('url', 20)->unique();
-            $table->string('description')->nullable();;
+            $table->string('url', 20)->unique()->nullable();
+            $table->string('description')->nullable();
             $table->string('image')->nullable();
+            $table->integer('code')->unique()->nullable();
+            $table->string('total_hours', 5)->nullable();
+            $table->boolean('published')->nullable();
+            $table->boolean('free')->default(false);
+            $table->double('price', 10, 2)->nullable();
+            $table->double('price_plots', 10, 2)->nullable();
+            $table->integer('total_plots')->nullable();
+            $table->string('link_buy')->nullable();
             $table->integer('user_id')->unsigned();
             $table->integer('category_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('category_id')->references('id')->on('category')->onDelete('cascade');
-            $table->integer('code')->unique();
-            $table->string('total_hours', 5);
-            $table->boolean('published');
-            $table->boolean('free')->default(false);
-            $table->double('price', 10, 2);
-            $table->double('price_plots', 10, 2);
-            $table->integer('total_plots');
-            $table->string('link_buy');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
         });
     }
