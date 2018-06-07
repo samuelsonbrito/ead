@@ -26,7 +26,7 @@ class StoreUpdateCourseFormRequest extends FormRequest
         return [
             "name" => "required|min:3|max:50|unique:courses,name,{$this->segment(3)},id",
             "description" => "max:1000",
-            "image" => "image"
+            //"image" => "image"
         ];
     }
 }

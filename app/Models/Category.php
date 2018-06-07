@@ -33,4 +33,9 @@ class Category extends Model
         })->paginate($total);
         
     }
+
+    public function courses()
+    {
+        return $this->hasMany(Course::class);
+    }
 }

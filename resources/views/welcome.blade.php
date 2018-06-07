@@ -24,7 +24,7 @@
         <div id="app">
             <vue-snotify></vue-snotify>
             <ead-preloader></ead-preloader>
-            <router-view></<router-view>
+            <router-view></router-view>
         </div>
 
         <script src="{{ mix('/js/app.js') }}"></script>

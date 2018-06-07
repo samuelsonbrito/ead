@@ -54,8 +54,8 @@
 
 <script>
 
-import EadPagination from '../../../shared/EadPagination.vue'
-import EadSearch from '../../shared/EadSearch.vue'
+import EadPagination from '../../../shared/EadPagination'
+import EadSearch from '../../shared/EadSearch'
 
 export default {
   created(){

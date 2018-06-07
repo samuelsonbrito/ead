@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Storage;
 
 class CourseController extends Controller
 {
-    private $course;
+    private $course, $totalPage = 8;
     private $path = 'courses';
 
     public function __construct(Course $course)
@@ -20,7 +20,7 @@ class CourseController extends Controller
 
     public function index(Request $request)
     {
-        $course = $this->course->getResults();
+        $course = $this->course->getResults($request->all(), $this->totalPage);
 
         return response()->json($course);
     }
@@ -28,6 +28,7 @@ class CourseController extends Controller
     public function show($id)
     {
         $course = $this->course->find($id);
+        
         if(!$course)            
             return response()->json(['error' => 'Not found'], 404);
 
@@ -38,7 +39,7 @@ class CourseController extends Controller
     {
         $data = $request->all();
 
-        if($request->hasFile('image') && $request->file('image')->isValid()){
+        if ($request->hasFile('image') && $request->file('image')->isValid()) {
 
             $name = kebab_case($request->name);
             $extension = $request->image->extension();
@@ -48,7 +49,7 @@ class CourseController extends Controller
 
             $upload = $request->image->storeAs($this->path, $fileName);
 
-            if(!$upload)
+            if (!$upload)
                 return response()->json(['error' => 'Fail_Upload'], 500);
         }
 
