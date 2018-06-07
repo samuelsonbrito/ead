@@ -2,7 +2,7 @@
   <div>
       <h1>Listagem de Courses</h1>
 
-      <table class="table table-dark">
+      <table class="table">
 
         <thead>
           <tr>

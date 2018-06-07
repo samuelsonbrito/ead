@@ -8,7 +8,7 @@ class Category extends Model
 {
     protected $fillable = ['name', 'description'];
 
-    public function getResults($data, $total)
+    public function getResults(array $data, int $total): object
     {
         if(!isset($data['filter']) && !isset($data['name']) && !isset($data['description']))
             return $this->paginate($total);

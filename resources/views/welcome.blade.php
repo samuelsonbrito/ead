@@ -7,9 +7,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>Laravel</title>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-        
+        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         <!-- Styles -->
         <style>
             html, body {
@@ -24,6 +22,7 @@
     </head>
     <body>
         <div id="app">
+            <ead-preloader></ead-preloader>
             <router-view></<router-view>
         </div>
 

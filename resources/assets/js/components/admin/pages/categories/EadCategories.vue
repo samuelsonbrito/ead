@@ -1,0 +1,121 @@
+<template>
+
+    <div>
+        
+        <h1>Listagem de Categorias</h1>
+
+        <div class="row">
+
+            <div class="col">
+                <router-link :to="{ name: 'admin.departments.create'}" class="btn btn-success">Cadastrar</router-link>
+            </div>
+
+            <div class="col">
+                <EadSearch @search="searchFrom"></EadSearch>
+            </div>
+
+        </div>
+        
+        <table class="table">
+
+            <thead>
+
+                <tr>
+                    <th>ID</th>
+                    <th>NOME</th>
+                    <th width="200">AÇÕES</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr v-for="(category, index) in categories.data" :key="index">
+                    <td>{{ category.id }}</td>
+                    <td>{{ category.name }}</td>
+                    <td>
+                        <router-link :to="{ name: 'admin.categories.edit', params: {id: category.id}  }" class="btn btn-primary">Editar</router-link>
+
+                        <a href="" class="btn btn-danger" @click.prevent="confirmDestroy(category)">Deletar</a>
+                    </td>
+                </tr>
+               
+            </tbody>
+
+
+        </table>
+        
+        <EadPagination :pagination="categories" :offset="10" @paginate="loadCategories"></EadPagination>
+
+
+    </div>
+  
+</template>
+
+<script>
+
+import EadPagination from '../../../shared/EadPagination.vue'
+import EadSearch from '../../shared/EadSearch.vue'
+
+export default {
+  created(){
+    this.loadCategories()
+  },
+  data(){
+      return {
+          name: '',
+          search: '',
+      }
+  },
+  computed:{
+      categories(){
+          return this.$store.state.categories.items
+      },
+      params(){
+            return {
+                page: this.categories.current_page,
+                filter: this.search
+            }
+      }
+  },
+  methods:{
+      loadCategories(page = 1){
+          this.$store.dispatch('loadCategories', {...this.params, page})
+      },
+      
+      searchFrom(filter){
+            this.search = filter
+            this.loadCategories(1)
+      },
+      confirmDestroy(category){
+            this.$snotify.error(`Deseja realmente deletar a categoria ${category.name}`,'Deletar?', {
+                timeout: 10000,
+                showProgressBar: true,
+                closeOnClick: true,
+                buttons: [
+                    {text: 'Não', action: () => console.log('Não')},
+                    {text: 'Sim', action: () => this.destroy(category)}
+                ]
+            })
+      },
+      destroy(category){
+          this.$store.dispatch('destroyCategory', category.id)
+            .then(()=>{
+                this.$snotify.success(`Sucesso ao deletar a categoria: ${category.name}`)
+                this.loadCategories()
+            })
+            .catch(()=>{
+                this.$snotify.error(`Erro ao deletar a categoria: ${category.name}`)
+            })
+      },
+  },
+  components: {
+      EadSearch,
+      EadPagination,
+  }
+    
+}
+</script>
+
+<style scoped>
+</style>
