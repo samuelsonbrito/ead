@@ -6,6 +6,11 @@
 
       <form class="form" @submit.prevent="onSubmit">
 
+        <div :class="['form-group', { 'has-error': errors.image }]">
+          <span v-if="errors.image">{{ errors.image[0] }}</span>
+          <input type="file" class="form-control" @change="onFileChange">
+        </div>
+
         <div :class="['form-group', { 'has-error': errors.name }]">
           <span v-if="errors.name">{{ errors.name[0] }}</span>
           <input type="text" v-model="course.name" class="form-control" placeholder="Nome do Curso">
@@ -38,7 +43,8 @@ export default {
         user_id: 1,
         category_id: ''
       },
-      errors: {}
+      errors: {},
+      upload: null,
     }
   },
   created(){
@@ -61,7 +67,18 @@ export default {
       }
     },
     onSubmit(){
-      this.$store.dispatch('storeCourse', this.course)
+
+      const formData = new FormData()
+
+      if(this.upload != null)
+        formData.append('image', this.upload)
+
+      formData.append('id', this.course.id)
+      formData.append('name', this.course.name)
+      formData.append('user_id', 1)
+      formData.append('category_id', this.course.category_id)
+
+      this.$store.dispatch('storeCourse', formData)
         .then(() => {
           this.$snotify.success('Salvo com sucesso')
           this.$router.push({ name: 'admin.courses'})
@@ -70,6 +87,14 @@ export default {
           this.$snotify.error('Erro ao salvar')
           this.errors = error.response.data.errors
         })
+    },
+    onFileChange(e){
+      let files = e.target.files || e.dataTransfer.files
+      if(!files.length)
+        return
+
+      this.upload = files[0]
+
     },
   },
 }

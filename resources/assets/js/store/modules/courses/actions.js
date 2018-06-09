@@ -32,11 +32,15 @@ export default{
         
         context.commit('PRELOADER', true)
 
-        if(params.id){
+        if(params.get('id')){
+
+            alert('atualizar');
+
+            params.append('_method', 'PUT')
 
             return new Promise((resolve, reject)=>{
 
-                http.put(`courses/${params.id}`, params)
+                http.post(`courses/${params.get('id')}`, params)
                 .then(response => resolve())
                 .catch(error => reject(error))
                 .finally(() => context.commit('PRELOADER', false))

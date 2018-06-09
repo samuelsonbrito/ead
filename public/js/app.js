@@ -12470,6 +12470,7 @@ var http = __WEBPACK_IMPORTED_MODULE_0_axios___default.a.create({
 	timeout: 10000,
 	headers: {
 		//'Access-Control-Allow-Origin':	'*',
+		'content-type': 'multipart/form-data'
 	}
 });
 
@@ -34943,6 +34944,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -34954,7 +34960,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         user_id: 1,
         category_id: ''
       },
-      errors: {}
+      errors: {},
+      upload: null
     };
   },
   created: function created() {
@@ -34982,13 +34989,28 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     onSubmit: function onSubmit() {
       var _this2 = this;
 
-      this.$store.dispatch('storeCourse', this.course).then(function () {
+      var formData = new FormData();
+
+      if (this.upload != null) formData.append('image', this.upload);
+
+      formData.append('id', this.course.id);
+      formData.append('name', this.course.name);
+      formData.append('user_id', 1);
+      formData.append('category_id', this.course.category_id);
+
+      this.$store.dispatch('storeCourse', formData).then(function () {
         _this2.$snotify.success('Salvo com sucesso');
         _this2.$router.push({ name: 'admin.courses' });
       }).catch(function (error) {
         _this2.$snotify.error('Erro ao salvar');
         _this2.errors = error.response.data.errors;
       });
+    },
+    onFileChange: function onFileChange(e) {
+      var files = e.target.files || e.dataTransfer.files;
+      if (!files.length) return;
+
+      this.upload = files[0];
     }
   }
 });
@@ -35018,6 +35040,22 @@ var render = function() {
         }
       },
       [
+        _c(
+          "div",
+          { class: ["form-group", { "has-error": _vm.errors.image }] },
+          [
+            _vm.errors.image
+              ? _c("span", [_vm._v(_vm._s(_vm.errors.image[0]))])
+              : _vm._e(),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: { type: "file" },
+              on: { change: _vm.onFileChange }
+            })
+          ]
+        ),
+        _vm._v(" "),
         _c("div", { class: ["form-group", { "has-error": _vm.errors.name }] }, [
           _vm.errors.name
             ? _c("span", [_vm._v(_vm._s(_vm.errors.name[0]))])
@@ -36186,11 +36224,15 @@ var index_esm = {
 
         context.commit('PRELOADER', true);
 
-        if (params.id) {
+        if (params.get('id')) {
+
+            alert('atualizar');
+
+            params.append('_method', 'PUT');
 
             return new Promise(function (resolve, reject) {
 
-                __WEBPACK_IMPORTED_MODULE_0__config_config__["a" /* http */].put('courses/' + params.id, params).then(function (response) {
+                __WEBPACK_IMPORTED_MODULE_0__config_config__["a" /* http */].post('courses/' + params.get('id'), params).then(function (response) {
                     return resolve();
                 }).catch(function (error) {
                     return reject(error);

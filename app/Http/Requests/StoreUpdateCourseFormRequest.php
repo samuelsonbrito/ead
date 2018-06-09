@@ -24,10 +24,10 @@ class StoreUpdateCourseFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => "required|min:3|max:50",
+            'name' => "required|min:3|max:50|unique:courses,name,{$this->id}",
             'description' => 'max:1000',
             'category_id' => 'required',
-            //"image" => "image"
+            'image' => 'image'
         ];
     }
 
