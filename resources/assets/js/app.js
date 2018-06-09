@@ -18,3 +18,6 @@ const app = new Vue({
     router,
     el: '#app'
 });
+
+
+store.dispatch('loadCategories')

@@ -5,9 +5,18 @@
       <h1 v-else>Cadastro de Curso</h1>
 
       <form class="form" @submit.prevent="onSubmit">
+
         <div :class="['form-group', { 'has-error': errors.name }]">
           <span v-if="errors.name">{{ errors.name[0] }}</span>
           <input type="text" v-model="course.name" class="form-control" placeholder="Nome do Curso">
+        </div>
+
+        <div :class="['form-group', { 'has-error': errors.category_id }]">
+          <span v-if="errors.category_id">{{ errors.category_id[0] }}</span>
+          <select class="form-control" v-model="course.category_id" name="categoria">
+            <option value="">Selecione a Categoria</option>
+            <option v-for="category in categories" :key="category.id" :value="category.id">{{ category.name }}</option>
+          </select>
         </div>
 
         <div class="form-group">
@@ -27,13 +36,18 @@ export default {
         id: '',
         name: '',
         user_id: 1,
-        category_id: 1
+        category_id: ''
       },
       errors: {}
     }
   },
   created(){
     this.loadCourse()
+  },
+  computed:{
+    categories(){
+      return this.$store.state.categories.items.data
+    }
   },
   methods:{
     loadCourse(){

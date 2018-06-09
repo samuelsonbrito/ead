@@ -24,9 +24,18 @@ class StoreUpdateCourseFormRequest extends FormRequest
     public function rules()
     {
         return [
-            "name" => "required|min:3|max:50|unique:courses,name,{$this->segment(3)},id",
-            "description" => "max:1000",
+            'name' => "required|min:3|max:50",
+            'description' => 'max:1000',
+            'category_id' => 'required',
             //"image" => "image"
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'category_id.required' => 'O campo categoria é obrigatório.',
+        ];
+    }
+
 }

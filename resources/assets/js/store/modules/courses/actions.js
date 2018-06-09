@@ -65,7 +65,7 @@ export default{
             http.delete(`courses/${id}`)
             .then(response => resolve())
             .catch(error => reject(error))
-            //.finally(() => context.commit('PRELOADER', false))
+            .finally(() => context.commit('PRELOADER', false))
 
         })
     },

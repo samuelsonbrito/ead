@@ -9,7 +9,7 @@ use App\Http\Requests\StoreUpdateCategoryFormRequest;
 
 class CategoryController extends Controller
 {
-    private $category, $totalPage = 3;
+    private $category, $totalPage = 8;
 
     public function __construct(Category $category)
     {
