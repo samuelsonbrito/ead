@@ -26,7 +26,7 @@ class ClassroomController extends Controller
     public function show($id)
     {
         $classroom = $this->classroom->find($id);
-        if(!$classroom)            
+        if (!$classroom)            
             return response()->json(['error' => 'Not found'], 404);
 
         return response()->json($classroom);
@@ -43,7 +43,7 @@ class ClassroomController extends Controller
     {
         $classroom = $this->classroom->find($id);
 
-        if(!$classroom)            
+        if (!$classroom)            
             return response()->json(['error' => 'Not found'], 404);
 
         $classroom->update($request->all());
@@ -55,7 +55,7 @@ class ClassroomController extends Controller
     {
         $classroom = $this->classroom->find($id);
 
-        if(!$classroom)            
+        if (!$classroom)            
             return response()->json(['error' => 'Not found'], 404);
 
         $classroom->delete();

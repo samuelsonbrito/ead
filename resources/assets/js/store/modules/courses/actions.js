@@ -1,5 +1,10 @@
 import {http} from '../../../config/config'
 
+const CONFIG = {
+    headers: {
+		'content-type': 'multipart/form-data',
+	},
+}
 export default{
 
     loadCourses(context, params){
@@ -34,13 +39,11 @@ export default{
 
         if(params.get('id')){
 
-            alert('atualizar');
-
             params.append('_method', 'PUT')
 
             return new Promise((resolve, reject)=>{
 
-                http.post(`courses/${params.get('id')}`, params)
+                http.post(`courses/${params.get('id')}`, params, {CONFIG})
                 .then(response => resolve())
                 .catch(error => reject(error))
                 .finally(() => context.commit('PRELOADER', false))
@@ -51,7 +54,7 @@ export default{
 
             return new Promise((resolve, reject)=>{
 
-                http.post('courses', params)
+                http.post('courses', params, {CONFIG})
                 .then(response => resolve())
                 .catch(error => reject(error))
                 .finally(() => context.commit('PRELOADER', false))

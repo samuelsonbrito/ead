@@ -8,7 +8,15 @@
 
         <div :class="['form-group', { 'has-error': errors.image }]">
           <span v-if="errors.image">{{ errors.image[0] }}</span>
-          <input type="file" class="form-control" @change="onFileChange">
+
+          <div v-if="imagePreview" class="text-center">
+            <img :src="imagePreview" class="image-preview">
+            <button class="btn btn-danger" @click.prevent="removePreviewImage">X</button>
+          </div>
+          
+          <div v-else>
+            <input type="file" class="form-control" @change="onFileChange">
+          </div>
         </div>
 
         <div :class="['form-group', { 'has-error': errors.name }]">
@@ -41,10 +49,11 @@ export default {
         id: '',
         name: '',
         user_id: 1,
-        category_id: ''
+        category_id: '',
       },
       errors: {},
       upload: null,
+      imagePreview: null,
     }
   },
   created(){
@@ -88,6 +97,7 @@ export default {
           this.errors = error.response.data.errors
         })
     },
+
     onFileChange(e){
       let files = e.target.files || e.dataTransfer.files
       if(!files.length)
@@ -95,7 +105,22 @@ export default {
 
       this.upload = files[0]
 
+      this.previewImage(files[0])
     },
+
+    previewImage(file){
+      let reader = new FileReader();
+      reader.onload = (e) =>{
+        this.imagePreview = e.target.result
+      }
+      reader.readAsDataURL(file)
+    },
+
+    removePreviewImage(){
+      this.imagePreview = null
+      this.upload = null
+    },
+
   },
 }
 </script>
@@ -106,5 +131,8 @@ export default {
 }
 .has-error input{
   border: 1px solid red
+}
+.image-preview{
+  max-width: 60px;
 }
 </style>

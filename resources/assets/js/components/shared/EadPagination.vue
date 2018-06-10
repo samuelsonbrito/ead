@@ -35,29 +35,30 @@
     },
     computed: {
       pagesNumber() {
-        // Verifica se tem itens para paginar, se não tiver retorna o Array vazio
+        
         if (!this.pagination.to) {
           return [];
         }
-        // Define a próxima página
+        
         let from = this.pagination.current_page - this.offset
+        
         from = (from < 1) ? 1 : from
         
-        // Define a última opção páginação
         let to = from + this.offset
+        
         to = (to >= this.pagination.last_page) ? this.pagination.last_page : to
-        // Cria as opções de paginação
+        
         let pagesArray = [];
+
         for (let page = from; page <= to; page++) {
           pagesArray.push(page)
         }
-        // Array montado com as opções de paginação (Número de opções de paginação === offset)
+        
         return pagesArray
       }
     },
     methods : {
       changePage(page) {
-        // Dispara o evento @paginate do Component Pai
         this.$emit('paginate', page)
       }
     }

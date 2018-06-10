@@ -23,6 +23,7 @@
                 <tr>
                     <th>ID</th>
                     <th>NOME</th>
+                    <th>IMAGEM</th>
                     <th width="200">AÇÕES</th>
                 </tr>
 
@@ -33,6 +34,11 @@
                 <tr v-for="(course, index) in courses.data" :key="index">
                     <td>{{ course.id }}</td>
                     <td>{{ course.name }}</td>
+                    <td>
+                        <div v-if="course.image">
+                            <img :src="[`/storage/courses/${course.image}`]" class="image-preview" alt="">
+                        </div>
+                    </td>
                     <td>
                         <router-link :to="{ name: 'admin.courses.edit', params: {id: course.id}  }" class="btn btn-primary">Editar</router-link>
 
@@ -118,4 +124,7 @@ export default {
 </script>
 
 <style scoped>
+.image-preview{
+  max-width: 60px;
+}
 </style>

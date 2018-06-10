@@ -12470,7 +12470,7 @@ var http = __WEBPACK_IMPORTED_MODULE_0_axios___default.a.create({
 	timeout: 10000,
 	headers: {
 		//'Access-Control-Allow-Origin':	'*',
-		'content-type': 'multipart/form-data'
+		//'content-type': 'multipart/form-data',
 	}
 });
 
@@ -12519,7 +12519,6 @@ __WEBPACK_IMPORTED_MODULE_2__store_store__["a" /* default */].dispatch('loadCate
 /***/ }),
 /* 19 */
 /***/ (function(module, exports, __webpack_require__) {
-
 
 try {
     __webpack_require__(20);
@@ -33447,7 +33446,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -33495,29 +33494,30 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
   computed: {
     pagesNumber: function pagesNumber() {
-      // Verifica se tem itens para paginar, se não tiver retorna o Array vazio
+
       if (!this.pagination.to) {
         return [];
       }
-      // Define a próxima página
+
       var from = this.pagination.current_page - this.offset;
+
       from = from < 1 ? 1 : from;
 
-      // Define a última opção páginação
       var to = from + this.offset;
+
       to = to >= this.pagination.last_page ? this.pagination.last_page : to;
-      // Cria as opções de paginação
+
       var pagesArray = [];
+
       for (var page = from; page <= to; page++) {
         pagesArray.push(page);
       }
-      // Array montado com as opções de paginação (Número de opções de paginação === offset)
+
       return pagesArray;
     }
   },
   methods: {
     changePage: function changePage(page) {
-      // Dispara o evento @paginate do Component Pai
       this.$emit('paginate', page);
     }
   }
@@ -33963,7 +33963,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n.image-preview[data-v-6c7a3db0]{\r\n  max-width: 60px;\n}\r\n", ""]);
 
 // exports
 
@@ -33980,6 +33980,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_EadSearch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__shared_EadSearch__);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -34152,6 +34158,20 @@ var render = function() {
               _vm._v(" "),
               _c("td", [_vm._v(_vm._s(course.name))]),
               _vm._v(" "),
+              _c("td", [
+                course.image
+                  ? _c("div", [
+                      _c("img", {
+                        staticClass: "image-preview",
+                        attrs: {
+                          src: ["/storage/courses/" + course.image],
+                          alt: ""
+                        }
+                      })
+                    ])
+                  : _vm._e()
+              ]),
+              _vm._v(" "),
               _c(
                 "td",
                 [
@@ -34209,6 +34229,8 @@ var staticRenderFns = [
         _c("th", [_vm._v("ID")]),
         _vm._v(" "),
         _c("th", [_vm._v("NOME")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("IMAGEM")]),
         _vm._v(" "),
         _c("th", { attrs: { width: "200" } }, [_vm._v("AÇÕES")])
       ])
@@ -34904,7 +34926,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.has-error[data-v-0d79a8e2]{\r\n  color: red\n}\n.has-error input[data-v-0d79a8e2]{\r\n  border: 1px solid red\n}\r\n", ""]);
+exports.push([module.i, "\n.has-error[data-v-0d79a8e2]{\r\n  color: red\n}\n.has-error input[data-v-0d79a8e2]{\r\n  border: 1px solid red\n}\n.image-preview[data-v-0d79a8e2]{\r\n  max-width: 60px;\n}\r\n", ""]);
 
 // exports
 
@@ -34915,6 +34937,14 @@ exports.push([module.i, "\n.has-error[data-v-0d79a8e2]{\r\n  color: red\n}\n.has
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -34961,7 +34991,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         category_id: ''
       },
       errors: {},
-      upload: null
+      upload: null,
+      imagePreview: null
     };
   },
   created: function created() {
@@ -35011,6 +35042,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       if (!files.length) return;
 
       this.upload = files[0];
+
+      this.previewImage(files[0]);
+    },
+    previewImage: function previewImage(file) {
+      var _this3 = this;
+
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        _this3.imagePreview = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    },
+    removePreviewImage: function removePreviewImage() {
+      this.imagePreview = null;
+      this.upload = null;
     }
   }
 });
@@ -35048,11 +35094,34 @@ var render = function() {
               ? _c("span", [_vm._v(_vm._s(_vm.errors.image[0]))])
               : _vm._e(),
             _vm._v(" "),
-            _c("input", {
-              staticClass: "form-control",
-              attrs: { type: "file" },
-              on: { change: _vm.onFileChange }
-            })
+            _vm.imagePreview
+              ? _c("div", { staticClass: "text-center" }, [
+                  _c("img", {
+                    staticClass: "image-preview",
+                    attrs: { src: _vm.imagePreview }
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-danger",
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          return _vm.removePreviewImage($event)
+                        }
+                      }
+                    },
+                    [_vm._v("X")]
+                  )
+                ])
+              : _c("div", [
+                  _c("input", {
+                    staticClass: "form-control",
+                    attrs: { type: "file" },
+                    on: { change: _vm.onFileChange }
+                  })
+                ])
           ]
         ),
         _vm._v(" "),
@@ -36192,6 +36261,11 @@ var index_esm = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config_config__ = __webpack_require__(16);
 
 
+var CONFIG = {
+    headers: {
+        'content-type': 'multipart/form-data'
+    }
+};
 /* harmony default export */ __webpack_exports__["a"] = ({
     loadCourses: function loadCourses(context, params) {
 
@@ -36226,13 +36300,11 @@ var index_esm = {
 
         if (params.get('id')) {
 
-            alert('atualizar');
-
             params.append('_method', 'PUT');
 
             return new Promise(function (resolve, reject) {
 
-                __WEBPACK_IMPORTED_MODULE_0__config_config__["a" /* http */].post('courses/' + params.get('id'), params).then(function (response) {
+                __WEBPACK_IMPORTED_MODULE_0__config_config__["a" /* http */].post('courses/' + params.get('id'), params, { CONFIG: CONFIG }).then(function (response) {
                     return resolve();
                 }).catch(function (error) {
                     return reject(error);
@@ -36244,7 +36316,7 @@ var index_esm = {
 
             return new Promise(function (resolve, reject) {
 
-                __WEBPACK_IMPORTED_MODULE_0__config_config__["a" /* http */].post('courses', params).then(function (response) {
+                __WEBPACK_IMPORTED_MODULE_0__config_config__["a" /* http */].post('courses', params, { CONFIG: CONFIG }).then(function (response) {
                     return resolve();
                 }).catch(function (error) {
                     return reject(error);

@@ -26,7 +26,7 @@ class CategoryController extends Controller
     public function show($id)
     {
         $category = $this->category->find($id);
-        if(!$category)            
+        if (!$category)            
             return response()->json(['error' => 'Not found'], 404);
 
         return response()->json($category);
@@ -43,7 +43,7 @@ class CategoryController extends Controller
     {
         $category = $this->category->find($id);
 
-        if(!$category)            
+        if (!$category)            
             return response()->json(['error' => 'Not found'], 404);
 
         $category->update($request->all());
@@ -55,7 +55,7 @@ class CategoryController extends Controller
     {
         $category = $this->category->find($id);
 
-        if(!$category)            
+        if (!$category)            
             return response()->json(['error' => 'Not found'], 404);
 
         $category->delete();

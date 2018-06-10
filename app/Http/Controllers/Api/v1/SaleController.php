@@ -27,7 +27,7 @@ class SaleController extends Controller
     {
         $sale = $this->sale->find($id);
 
-        if(!$sale)            
+        if (!$sale)            
             return response()->json(['error' => 'Not found'], 404);
 
         return response()->json($sale);
@@ -44,7 +44,7 @@ class SaleController extends Controller
     {
         $sale = $this->sale->find($id);
 
-        if(!$sale)            
+        if (!$sale)            
             return response()->json(['error' => 'Not found'], 404);
 
         $sale->update($request->all());
@@ -56,7 +56,7 @@ class SaleController extends Controller
     {
         $sale = $this->sale->find($id);
 
-        if(!$sale)            
+        if (!$sale)            
             return response()->json(['error' => 'Not found'], 404);
 
         $sale->delete();

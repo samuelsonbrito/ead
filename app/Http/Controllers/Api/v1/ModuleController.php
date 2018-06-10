@@ -26,7 +26,7 @@ class ModuleController extends Controller
     public function show($id)
     {
         $module = $this->module->find($id);
-        if(!$module)            
+        if (!$module)            
             return response()->json(['error' => 'Not found'], 404);
 
         return response()->json($module);
@@ -43,7 +43,7 @@ class ModuleController extends Controller
     {
         $module = $this->module->find($id);
 
-        if(!$module)            
+        if (!$module)            
             return response()->json(['error' => 'Not found'], 404);
 
         $module->update($request->all());
@@ -55,7 +55,7 @@ class ModuleController extends Controller
     {
         $module = $this->module->find($id);
 
-        if(!$module)            
+        if (!$module)            
             return response()->json(['error' => 'Not found'], 404);
 
         $module->delete();

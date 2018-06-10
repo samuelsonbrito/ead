@@ -67,9 +67,9 @@ class CourseController extends Controller
 
         $data = $request->all();
 
-        if($request->hasFile('image') && $request->file('image')->isValid()){
+        if ($request->hasFile('image') && $request->file('image')->isValid()) {
 
-            if($course->image){
+            if ($course->image) {
                 if(Storage::exists("{$this->path}/{$course->image}"))
                     Storage::delete("{$this->path}/{$course->image}");
             }
@@ -96,12 +96,12 @@ class CourseController extends Controller
     {
         $course = $this->course->find($id);
 
-        if(!$course)            
+        if (!$course)            
             return response()->json(['error' => 'Not found'], 404);
 
-        if($course->delete())
-            if($course->image){
-                if(Storage::exists("{$this->path}/{$course->image}"))
+        if ($course->delete())
+            if ($course->image) {
+                if (Storage::exists("{$this->path}/{$course->image}"))
                     Storage::delete("{$this->path}/{$course->image}");
             }
 
