@@ -2,26 +2,23 @@
     <div>
         <h1>Cursos</h1>
         <div class="row">
-            <div class="col-3" v-for="course in courses.data" :key="course.id">
-                <div v-if="course.image">
-                    <img :src="[`/storage/courses/${course.image}`]" class="image-preview" alt="">
-                </div>
-                <div v-else>
-                    <img :src="[`/image/no-image.png`]" class="image-preview" alt="">
-                </div>
-                {{course.name}}
-            </div>
+            <ead-item v-for="course in courses.data" 
+            :key="course.id"
+            :item="course"
+            :path="'courses'">
+            </ead-item>
             <hr>
         </div>
 
         <div class="row">
-            <EadPagination :pagination="courses" @paginate="loadCourses"></EadPagination>
+            <ead-pagination :pagination="courses" @paginate="loadCourses"></ead-pagination>
         </div>
     </div>
 </template>
 
 <script>
 import EadPagination from '../../../shared/EadPagination'
+import EadItem from '../../../shared/EadItem'
 
 export default {
     created(){
@@ -40,12 +37,11 @@ export default {
     },
     components:{
         EadPagination,
+        EadItem,
     }
 }
 </script>
 
 <style scoped>
-.image-preview{
-  max-width: 100px;
-}
+
 </style>

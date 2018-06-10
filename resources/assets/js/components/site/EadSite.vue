@@ -2,14 +2,14 @@
     
     <div>
 
-        <EadSiteHeader></EadSiteHeader>
+        <ead-site-header></ead-site-header>
 
         <div class="container">
             <router-view></router-view>
         </div>
         
 
-        <EadSiteFooter></EadSiteFooter>
+        <ead-site-footer></ead-site-footer>
 
     </div>
 </template>

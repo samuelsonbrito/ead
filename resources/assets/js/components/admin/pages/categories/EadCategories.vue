@@ -11,7 +11,7 @@
             </div>
 
             <div class="col">
-                <EadSearch @search="searchFrom"></EadSearch>
+                <ead-search @search="searchFrom"></ead-search>
             </div>
 
         </div>
@@ -45,7 +45,7 @@
 
         </table>
         
-        <EadPagination :pagination="categories" :offset="10" @paginate="loadCategories"></EadPagination>
+        <ead-pagination :pagination="categories" :offset="10" @paginate="loadCategories"></ead-pagination>
 
 
     </div>
