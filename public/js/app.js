@@ -35339,7 +35339,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n.image-preview[data-v-14b56120]{\r\n  max-width: 100px;\n}\r\n", ""]);
 
 // exports
 
@@ -35350,12 +35350,32 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shared_EadPagination__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shared_EadPagination___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__shared_EadPagination__);
 //
 //
 //
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     created: function created() {
@@ -35366,6 +35386,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         courses: function courses() {
             return this.$store.state.courses.items;
         }
+    },
+    methods: {
+        loadCourses: function loadCourses() {
+            var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+
+            this.$store.dispatch('loadCourses', { page: page });
+        }
+    },
+    components: {
+        EadPagination: __WEBPACK_IMPORTED_MODULE_0__shared_EadPagination___default.a
     }
 });
 
@@ -35377,7 +35407,52 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("\n    Sou a homepage\n")])
+  return _c("div", [
+    _c("h1", [_vm._v("Cursos")]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "row" },
+      [
+        _vm._l(_vm.courses.data, function(course) {
+          return _c("div", { key: course.id, staticClass: "col-3" }, [
+            course.image
+              ? _c("div", [
+                  _c("img", {
+                    staticClass: "image-preview",
+                    attrs: {
+                      src: ["/storage/courses/" + course.image],
+                      alt: ""
+                    }
+                  })
+                ])
+              : _c("div", [
+                  _c("img", {
+                    staticClass: "image-preview",
+                    attrs: { src: ["/image/no-image.png"], alt: "" }
+                  })
+                ]),
+            _vm._v("\n            " + _vm._s(course.name) + "\n        ")
+          ])
+        }),
+        _vm._v(" "),
+        _c("hr")
+      ],
+      2
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "row" },
+      [
+        _c("EadPagination", {
+          attrs: { pagination: _vm.courses },
+          on: { paginate: _vm.loadCourses }
+        })
+      ],
+      1
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -35475,7 +35550,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -35490,6 +35565,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__EadSiteHeader___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__EadSiteHeader__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__EadSiteFooter__ = __webpack_require__(117);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__EadSiteFooter___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__EadSiteFooter__);
+//
+//
+//
 //
 //
 //
@@ -35528,7 +35606,7 @@ var render = function() {
     [
       _c("EadSiteHeader"),
       _vm._v(" "),
-      _c("router-view"),
+      _c("div", { staticClass: "container" }, [_c("router-view")], 1),
       _vm._v(" "),
       _c("EadSiteFooter")
     ],

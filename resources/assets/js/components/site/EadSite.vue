@@ -4,7 +4,10 @@
 
         <EadSiteHeader></EadSiteHeader>
 
-        <router-view></router-view>
+        <div class="container">
+            <router-view></router-view>
+        </div>
+        
 
         <EadSiteFooter></EadSiteFooter>
 
