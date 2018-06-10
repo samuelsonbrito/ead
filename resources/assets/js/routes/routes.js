@@ -10,6 +10,7 @@ import EadAddCourses from '../components/admin/pages/courses/EadAddCourses'
 import EadHome from '../components/site/pages/home/EadHome'
 import EadSite from '../components/site/EadSite'
 import EadContact from '../components/site/pages/contact/EadContact'
+import EadCourseDetail from '../components/site/pages/course/EadCourseDetail'
 
 Vue.use(VueRouter)
 
@@ -20,6 +21,7 @@ export default new VueRouter({
                         path: '/',
                         component: EadSite,
                         children: [
+                                { path: 'cursos/:id', component: EadCourseDetail, name: 'course.detail'},
                                 { path: '', component: EadHome, name: 'home'},
                                 { path: 'contato', component: EadContact, name: 'contact'},
                         ]

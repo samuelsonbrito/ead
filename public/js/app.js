@@ -30505,6 +30505,9 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_site_EadSite___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__components_site_EadSite__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_site_pages_contact_EadContact__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_site_pages_contact_EadContact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__components_site_pages_contact_EadContact__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_site_pages_course_EadCourseDetail__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_site_pages_course_EadCourseDetail___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__components_site_pages_course_EadCourseDetail__);
+
 
 
 
@@ -30525,7 +30528,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
         routes: [{
                 path: '/',
                 component: __WEBPACK_IMPORTED_MODULE_9__components_site_EadSite___default.a,
-                children: [{ path: '', component: __WEBPACK_IMPORTED_MODULE_8__components_site_pages_home_EadHome___default.a, name: 'home' }, { path: 'contato', component: __WEBPACK_IMPORTED_MODULE_10__components_site_pages_contact_EadContact___default.a, name: 'contact' }]
+                children: [{ path: 'cursos/:id', component: __WEBPACK_IMPORTED_MODULE_11__components_site_pages_course_EadCourseDetail___default.a, name: 'course.detail' }, { path: '', component: __WEBPACK_IMPORTED_MODULE_8__components_site_pages_home_EadHome___default.a, name: 'home' }, { path: 'contato', component: __WEBPACK_IMPORTED_MODULE_10__components_site_pages_contact_EadContact___default.a, name: 'contact' }]
         }, {
                 path: '/admin',
                 component: __WEBPACK_IMPORTED_MODULE_5__components_admin_EadAdmin___default.a,
@@ -39869,6 +39872,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['item', 'path']
@@ -39882,25 +39886,38 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "col-3" }, [
-    _vm.item.image
-      ? _c("div", [
-          _c("img", {
-            staticClass: "image-preview",
-            attrs: {
-              src: ["/storage/" + _vm.path + "/" + _vm.item.image],
-              alt: _vm.item.name
-            }
-          })
-        ])
-      : _c("div", [
-          _c("img", {
-            staticClass: "image-preview",
-            attrs: { src: ["/image/no-image.png"], alt: _vm.item.name }
-          })
-        ]),
-    _vm._v("\n    \n    " + _vm._s(_vm.item.name) + "\n\n")
-  ])
+  return _c(
+    "div",
+    { staticClass: "col-3" },
+    [
+      _c(
+        "router-link",
+        {
+          attrs: { to: { name: "course.detail", params: { id: _vm.item.id } } }
+        },
+        [
+          _vm.item.image
+            ? _c("div", [
+                _c("img", {
+                  staticClass: "image-preview",
+                  attrs: {
+                    src: ["/storage/" + _vm.path + "/" + _vm.item.image],
+                    alt: _vm.item.name
+                  }
+                })
+              ])
+            : _c("div", [
+                _c("img", {
+                  staticClass: "image-preview",
+                  attrs: { src: ["/image/no-image.png"], alt: _vm.item.name }
+                })
+              ]),
+          _vm._v("\n        \n        " + _vm._s(_vm.item.name) + "\n    ")
+        ]
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -39909,6 +39926,73 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-5998f6fb", module.exports)
+  }
+}
+
+/***/ }),
+/* 126 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = null
+/* template */
+var __vue_template__ = __webpack_require__(127)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\site\\pages\\course\\EadCourseDetail.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-6e268dce", Component.options)
+  } else {
+    hotAPI.reload("data-v-6e268dce", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 127 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div")
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-6e268dce", module.exports)
   }
 }
 
