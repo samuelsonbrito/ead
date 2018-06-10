@@ -12514,8 +12514,6 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
     el: '#app'
 });
 
-__WEBPACK_IMPORTED_MODULE_2__store_store__["a" /* default */].dispatch('loadCategories');
-
 /***/ }),
 /* 19 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -35009,6 +35007,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     };
   },
   created: function created() {
+    this.loadCategories();
     this.loadCourse();
   },
 
@@ -35018,6 +35017,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     }
   },
   methods: {
+    loadCategories: function loadCategories() {
+      this.$store.dispatch('loadCategories');
+    },
     loadCourse: function loadCourse() {
       var _this = this;
 
@@ -35337,7 +35339,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -35355,7 +35357,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+    created: function created() {
+        if (this.courses.data.length == 0) this.$store.dispatch('loadCourses', {});
+    },
+
+    computed: {
+        courses: function courses() {
+            return this.$store.state.courses.items;
+        }
+    }
+});
 
 /***/ }),
 /* 88 */

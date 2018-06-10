@@ -57,6 +57,7 @@ export default {
     }
   },
   created(){
+    this.loadCategories()
     this.loadCourse()
   },
   computed:{
@@ -65,6 +66,9 @@ export default {
     }
   },
   methods:{
+    loadCategories(){
+      this.$store.dispatch('loadCategories')
+    },
     loadCourse(){
       if(this.param){
         this.$store.dispatch('loadCourse', this.param)
