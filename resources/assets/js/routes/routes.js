@@ -7,12 +7,23 @@ import EadDashboard from '../components/admin/pages/dashboard/EadDashboard'
 import EadAdmin from '../components/admin/EadAdmin'
 import EadAddCategories from '../components/admin/pages/categories/EadAddCategories'
 import EadAddCourses from '../components/admin/pages/courses/EadAddCourses'
+import EadHome from '../components/site/pages/home/EadHome'
+import EadSite from '../components/site/EadSite'
+import EadContact from '../components/site/pages/contact/EadContact'
 
 Vue.use(VueRouter)
 
 export default new VueRouter({
         //mode: 'history',
 	routes: [
+                {
+                        path: '/',
+                        component: EadSite,
+                        children: [
+                                { path: '', component: EadHome, name: 'home'},
+                                { path: 'contato', component: EadContact, name: 'contact'},
+                        ]
+                },
                 {
                         path: '/admin', 
                         component: EadAdmin,
