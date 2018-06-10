@@ -2,18 +2,25 @@
     
     <div>
 
-        #header
+        <EadSiteHeader></EadSiteHeader>
 
         <router-view></router-view>
 
-        #footer
+        <EadSiteFooter></EadSiteFooter>
 
     </div>
 </template>
 
 <script>
+
+import EadSiteHeader from './EadSiteHeader'
+import EadSiteFooter from './EadSiteFooter'
+
 export default {
-    
+    components: {
+        EadSiteHeader,
+        EadSiteFooter,
+    }    
 }
 </script>
 
