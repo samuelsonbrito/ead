@@ -55,7 +55,7 @@
 <script>
 
 import EadPagination from '../../../shared/EadPagination'
-import EadSearch from '../../shared/EadSearch'
+import EadSearch from '../../../shared/EadSearch'
 
 export default {
   created(){

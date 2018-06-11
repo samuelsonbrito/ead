@@ -21,7 +21,7 @@ export default new VueRouter({
                         path: '/',
                         component: EadSite,
                         children: [
-                                { path: 'cursos/:id', component: EadCourseDetail, name: 'course.detail'},
+                                { path: 'cursos/:id', component: EadCourseDetail, name: 'course.detail', props: true},
                                 { path: '', component: EadHome, name: 'home'},
                                 { path: 'contato', component: EadContact, name: 'contact'},
                         ]
