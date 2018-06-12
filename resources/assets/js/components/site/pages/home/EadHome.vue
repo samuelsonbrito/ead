@@ -2,7 +2,7 @@
     <div>
         <h1>Cursos</h1>
 
-        <ead-search @search="search"></ead-search>
+        <ead-home-search @search="search"></ead-home-search>
 
         <div class="row">
             <ead-item v-for="course in courses.data" 
@@ -22,13 +22,14 @@
 <script>
 import EadPagination from '../../../shared/EadPagination'
 import EadItem from '../../../shared/EadItem'
-import EadSearch from '../../../shared/EadSearch'
+import EadHomeSearch from './EadHomeSearch'
 
 export default {
 
     data(){
         return {
-            filter: ''
+            filter: '',
+            category_id: '',
         }
     },
     created(){
@@ -43,6 +44,7 @@ export default {
         params(){
             return {
                 filter: this.filter,
+                category_id: this.category_id,
                 page: this.courses.current_page,
             }
         },
@@ -52,15 +54,16 @@ export default {
             this.$store.dispatch('loadCourses', {...this.params, page})
         },
 
-        search(filter){
-            this.filter = filter
+        search(values){
+            this.filter = values.filter
+            this.category_id = values.category_id
             this.loadCourses()
         },
     },
     components:{
         EadPagination,
         EadItem,
-        EadSearch,
+        EadHomeSearch,
     }
 }
 </script>
