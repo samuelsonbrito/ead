@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
+import store from '../store/store'
+
 import EadCategories from '../components/admin/pages/categories/EadCategories'
 import EadCourses from '../components/admin/pages/courses/EadCourses'
 import EadDashboard from '../components/admin/pages/dashboard/EadDashboard'
@@ -15,9 +17,8 @@ import EadLogin from '../components/site/pages/login/EadLogin'
 
 Vue.use(VueRouter)
 
-export default new VueRouter({
-        //mode: 'history',
-	routes: [
+
+	const routes = [
                 {
                         path: '/',
                         component: EadSite,
@@ -31,10 +32,11 @@ export default new VueRouter({
                 {
                         path: '/admin', 
                         component: EadAdmin,
+                        meta: { auth: true },
                         children: [
                                 { path: 'categorias/create', component: EadAddCategories, name: 'admin.categories.create'}, 
                                 { path: 'categorias/:id/edit', component: EadAddCategories, name: 'admin.categories.edit', props: true},
-                                { path: 'categorias', component: EadCategories, name:'admin.categories'},
+                                { path: 'categorias', component: EadCategories, name:'admin.categories', meta: {auth: true}},
                                 { path: 'cursos', component: EadCourses, name:'admin.courses'},
                                 { path: 'cursos/create', component: EadAddCourses, name: 'admin.courses.create'}, 
                                 { path: 'cursos/:id/edit', component: EadAddCourses, name: 'admin.courses.edit', props: true},
@@ -42,5 +44,24 @@ export default new VueRouter({
                         ]
                 },
                 
-        ],
+        ]
+
+const router = new VueRouter({
+        routes
 })
+
+router.beforeEach((to, from, next) => {
+        if(to.meta.auth && !store.state.auth.authenticated){
+                return router.push({ name: 'login' })
+        }
+
+        if(to.matched.some(record => record.meta.auth) && !store.state.auth.authenticated){
+                return router.push({ name: 'login' })
+        }
+
+        console.log(to)
+        next()
+
+})
+
+export default router

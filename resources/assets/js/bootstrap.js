@@ -1,3 +1,5 @@
+import {nameToken} from './config/config'
+
 try {
     require('bootstrap');
 } catch (e) {}
@@ -24,4 +26,10 @@ if (token) {
     window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
 } else {
     console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
+}
+
+const tokenAuth = localStorage.getItem(nameToken)
+
+if(tokenAuth){
+    window.axios.defaults.headers.common['Authorization'] = `Bearer ${tokenAuth}`;
 }

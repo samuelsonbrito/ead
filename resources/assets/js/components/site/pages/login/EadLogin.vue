@@ -11,13 +11,13 @@
                     </div>
 
                     <div class="card-body">
-                        <form class="form">
+                        <form class="form" @submit.prevent="onSubmit">
                             <div class="form-group">
-                                <input type="email" class="form-control" placeholder="E-mail">
+                                <input type="email" v-model="user.email" class="form-control" placeholder="E-mail">
                             </div>
 
                             <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Senha">
+                                <input type="password" v-model="user.password" class="form-control" placeholder="Senha">
                             </div>
 
                             <div class="form-group">
@@ -38,6 +38,21 @@
 <script>
 export default {
     
+    data(){
+        return {
+            user:{
+                email: '',
+                password: '',
+            }
+        }
+    },
+
+    methods:{
+        onSubmit(){
+            this.$store.dispatch('login', this.user)
+                .then(() => this.$router.push({name: 'admin.dashboard'}))
+        },
+    }
 }
 </script>
 

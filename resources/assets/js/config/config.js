@@ -7,4 +7,6 @@ export const http = axios.create({
 		//'Access-Control-Allow-Origin':	'*',
 		//'content-type': 'multipart/form-data',
 	},
-});
+})
+
+export const nameToken = 'token_auth'

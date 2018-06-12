@@ -19,3 +19,5 @@ const app = new Vue({
     el: '#app'
 });
 
+store.dispatch('checkLogin')
+    .then(()=> router.push({name: 'admin.dashboard'}))
