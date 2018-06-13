@@ -16,6 +16,10 @@ class CourseController extends Controller
     public function __construct(Course $course)
     {
         $this->course = $course;
+        $this->middleware('auth:api')->except([
+            'index',
+            'show'
+        ]);
     }
 
     public function index(Request $request)

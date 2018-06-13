@@ -34481,7 +34481,12 @@ var CONFIG = {
 
             return axios.post('/api/auth', params).then(function (response) {
                 context.commit('AUTH_USER_ACCEPT', response.data.user);
-                localStorage.setItem(__WEBPACK_IMPORTED_MODULE_0__config_config__["b" /* nameToken */], response.data.token);
+
+                var token = response.data.token;
+
+                localStorage.setItem(__WEBPACK_IMPORTED_MODULE_0__config_config__["b" /* nameToken */], token);
+
+                window.axios.defaults.headers.common['Authorization'] = 'Bearer ' + token;
             }).catch(function (error) {
                 return console.log(error);
             }).finally(function () {
@@ -35831,7 +35836,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -35875,8 +35880,29 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
-/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    computed: {
+        user: function user() {
+            return this.$store.state.auth.user;
+        }
+    },
+
+    methods: {
+        logoff: function logoff() {
+            this.$store.dispatch('logoff');
+            this.$router.push({ name: 'login' });
+        }
+    }
+});
 
 /***/ }),
 /* 83 */
@@ -35932,7 +35958,29 @@ var render = function() {
                 )
               ],
               1
-            )
+            ),
+            _vm._v(" "),
+            _c("li", { staticClass: "nav-item" }, [
+              _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
+                _vm._v(
+                  "\n                        " + _vm._s(_vm.user.name) + " ("
+                ),
+                _c(
+                  "a",
+                  {
+                    attrs: { href: "#" },
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.logoff($event)
+                      }
+                    }
+                  },
+                  [_vm._v("Sair")]
+                ),
+                _vm._v(")\n                   ")
+              ])
+            ])
           ],
           1
         ),
