@@ -6,6 +6,7 @@ export default{
 
         user: {},
         authenticated: false,
+        urlBack: 'home',
 
     },
     mutations: {
@@ -13,6 +14,10 @@ export default{
         AUTH_USER_ACCEPT(state, user){
             state.authenticated = true,
             state.user = user
+        },
+
+        UPDATE_URL_BACK(state, url){
+            state.urlBack = url
         },
 
     },
@@ -32,6 +37,8 @@ export default{
         },
 
         checkLogin(context){
+
+            context.commit('PRELOADER', true)
             
             return new Promise((resolve, reject) => {
                 const token = localStorage.getItem(nameToken)
@@ -44,6 +51,7 @@ export default{
                         resolve()
                     })
                     .catch(() => reject())
+                    .finally(() => context.commit('PRELOADER', false))
             })
 
         }

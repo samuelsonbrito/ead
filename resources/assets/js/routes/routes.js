@@ -23,7 +23,7 @@ Vue.use(VueRouter)
                         path: '/',
                         component: EadSite,
                         children: [
-                                { path: 'login', component: EadLogin, name: 'login'},
+                                { path: 'login', component: EadLogin, name: 'login', meta: {auth: false}},
                                 { path: 'cursos/:id', component: EadCourseDetail, name: 'course.detail', props: true},
                                 { path: '', component: EadHome, name: 'home'},
                                 { path: 'contato', component: EadContact, name: 'contact'},
@@ -52,14 +52,19 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
         if(to.meta.auth && !store.state.auth.authenticated){
+                store.commit('UPDATE_URL_BACK', to.name)
                 return router.push({ name: 'login' })
         }
 
         if(to.matched.some(record => record.meta.auth) && !store.state.auth.authenticated){
+                store.commit('UPDATE_URL_BACK', to.name)
                 return router.push({ name: 'login' })
         }
 
-        console.log(to)
+        if(to.meta.hasOwnProperty('auth') && !to.meta.auth && store.state.auth.authenticated){
+                return router.push({ name: 'admin.dashboard' })
+        }
+
         next()
 
 })
