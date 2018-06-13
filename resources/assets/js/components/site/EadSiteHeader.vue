@@ -10,8 +10,8 @@
             </li>
 
             <li class="nav-item" v-if="user.name">
-                <router-link :to="{name: 'login'}" class="nav-link">
-                    Usuário: {{ user.name }}
+                <router-link :to="{name: 'admin.dashboard'}" class="nav-link">
+                    Usuário: {{ user.name }} (<a @click.prevent="logoff">Sair</a>)
                 </router-link>
             </li>
 
@@ -28,8 +28,14 @@ export default {
     computed:{
         user(){
             return this.$store.state.auth.user
+        },
+    },
+    
+    methods:{
+        logoff(){
+            this.$store.dispatch('logoff')
         }
-    }  
+    }
 }
 
 </script>

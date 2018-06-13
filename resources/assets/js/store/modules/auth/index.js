@@ -16,6 +16,12 @@ export default{
             state.user = user
         },
 
+        AUTH_USER_LOGOFF(state){
+            state.authenticated = false
+            state.user = {},
+            state.urlBack = 'home'
+        },
+
         UPDATE_URL_BACK(state, url){
             state.urlBack = url
         },
@@ -54,7 +60,13 @@ export default{
                     .finally(() => context.commit('PRELOADER', false))
             })
 
-        }
+        },
+
+        logoff(context){
+            localStorage.removeItem(nameToken)
+
+            context.commit('AUTH_USER_LOGOFF')
+        },
 
     },
     getters: {

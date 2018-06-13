@@ -34466,6 +34466,10 @@ var CONFIG = {
         AUTH_USER_ACCEPT: function AUTH_USER_ACCEPT(state, user) {
             state.authenticated = true, state.user = user;
         },
+        AUTH_USER_LOGOFF: function AUTH_USER_LOGOFF(state) {
+            state.authenticated = false;
+            state.user = {}, state.urlBack = 'home';
+        },
         UPDATE_URL_BACK: function UPDATE_URL_BACK(state, url) {
             state.urlBack = url;
         }
@@ -34501,6 +34505,11 @@ var CONFIG = {
                     return context.commit('PRELOADER', false);
                 });
             });
+        },
+        logoff: function logoff(context) {
+            localStorage.removeItem(__WEBPACK_IMPORTED_MODULE_0__config_config__["b" /* nameToken */]);
+
+            context.commit('AUTH_USER_LOGOFF');
         }
     },
     getters: {}
@@ -37470,13 +37479,27 @@ var render = function() {
             [
               _c(
                 "router-link",
-                { staticClass: "nav-link", attrs: { to: { name: "login" } } },
+                {
+                  staticClass: "nav-link",
+                  attrs: { to: { name: "admin.dashboard" } }
+                },
                 [
                   _vm._v(
-                    "\n                Usuário: " +
-                      _vm._s(_vm.user.name) +
-                      "\n            "
-                  )
+                    "\n                Usuário: " + _vm._s(_vm.user.name) + " ("
+                  ),
+                  _c(
+                    "a",
+                    {
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          return _vm.logoff($event)
+                        }
+                      }
+                    },
+                    [_vm._v("Sair")]
+                  ),
+                  _vm._v(")\n            ")
                 ]
               )
             ],
@@ -40842,6 +40865,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     computed: {
         user: function user() {
             return this.$store.state.auth.user;
+        }
+    },
+
+    methods: {
+        logoff: function logoff() {
+            this.$store.dispatch('logoff');
         }
     }
 });
