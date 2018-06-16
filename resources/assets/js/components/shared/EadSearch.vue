@@ -2,13 +2,16 @@
 
     <div>
 
-        <form class="form form-inline" @submit.prevent="search">
-
-            <input type="text" class="form-control mr-sm-2" v-model="filter">
-            
-            <button type="submit" class="btn btn-outline-success">Pesquisar</button>
-
-        </form>
+        <v-layout row>
+            <v-flex xs4>
+                <v-text-field type="text" v-model="filter" label="Pesquisa"></v-text-field>
+            </v-flex>
+            <v-flex xs2>
+                <v-btn color="info" @click.prevent="search">
+                    <i class="material-icons">search</i>
+                </v-btn>
+            </v-flex>
+        </v-layout>
         
     </div>
     

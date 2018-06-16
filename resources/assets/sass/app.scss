@@ -1,15 +1,18 @@
 
 // Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
-
+//@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons");
 // Variables
 @import "variables";
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+//@import '~bootstrap/scss/bootstrap';
 //@import '~bootstrap/dist/css/bootstrap.css';
-@import '~bootstrap-vue/dist/bootstrap-vue.css';
+//@import '~bootstrap-vue/dist/bootstrap-vue.css';
 @import '~vue-snotify/styles/material';
+
+//Vuetify
+@import "~vuetify/dist/vuetify.min.css";
 
 // Vodal
 @import "~vodal/common.css";

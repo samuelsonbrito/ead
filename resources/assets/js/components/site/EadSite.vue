@@ -4,7 +4,7 @@
 
         <ead-site-header></ead-site-header>
 
-        <div class="container">
+        <div>
             <router-view></router-view>
         </div>
         

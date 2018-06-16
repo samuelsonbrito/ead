@@ -1,43 +1,33 @@
 <template>
-    <div class="container">
-
-        <div class="row justify-content-center">
-
-            <div class="col-sm-4">
-                <div class="card">
-
-                    <div class="card-header">
-                        Login
-                    </div>
-
-                    <div class="card-body">
-                        <form class="form" @submit.prevent="onSubmit">
-                            <div class="form-group">
-                                <input type="email" v-model="user.email" class="form-control" placeholder="E-mail">
-                            </div>
-
-                            <div class="form-group">
-                                <input type="password" v-model="user.password" class="form-control" placeholder="Senha">
-                            </div>
-
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-primary">Entrar</button>
-                            </div>
-                        </form>
-                    </div>
-
-                </div>
-            </div>
-            
-
-        </div>
-
-    </div>
+  <v-app id="inspire">
+    <v-content>
+      <v-container fluid fill-height>
+        <v-layout align-center justify-center>
+          <v-flex xs12 sm8 md4>
+            <v-card class="elevation-12">
+              <v-toolbar dark color="primary">
+                <v-toolbar-title>Login</v-toolbar-title>
+              </v-toolbar>
+              <v-card-text>
+                <v-form >
+                  <v-text-field prepend-icon="person" label="E-mail" type="email" v-model="user.email"></v-text-field>
+                  <v-text-field prepend-icon="lock" label="Senha" type="password" v-model="user.password"></v-text-field>
+                </v-form>
+              </v-card-text>
+              <v-card-actions>
+                <v-spacer></v-spacer>
+                <v-btn color="primary" @click.prevent="onSubmit">Login</v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-flex>
+        </v-layout>
+      </v-container>
+    </v-content>
+  </v-app>
 </template>
 
 <script>
-export default {
-    
+  export default {
     data(){
         return {
             user:{
@@ -46,16 +36,11 @@ export default {
             }
         }
     },
-
     methods:{
         onSubmit(){
             this.$store.dispatch('login', this.user)
                 .then(() => this.$router.push({name: 'admin.dashboard'}))
         },
     }
-}
+  }
 </script>
-
-<style scoped>
-
-</style>

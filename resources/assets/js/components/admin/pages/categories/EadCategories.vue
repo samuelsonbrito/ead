@@ -3,7 +3,6 @@
     <div>
         
         <h1>Listagem de Categorias</h1>
-
         <div class="row">
 
             <div class="col">
@@ -34,9 +33,8 @@
                     <td>{{ category.id }}</td>
                     <td>{{ category.name }}</td>
                     <td>
-                        <router-link :to="{ name: 'admin.categories.edit', params: {id: category.id}  }" class="btn btn-primary">Editar</router-link>
-
-                        <a href="" class="btn btn-danger" @click.prevent="confirmDestroy(category)">Deletar</a>
+                        <v-btn small flat color="info"  :to="{ name: 'admin.categories.edit', params: {id: category.id}  }"><i class="material-icons">create</i></v-btn>
+                        <v-btn small flat color="error" @click.prevent="confirmDestroy(category)"><i class="material-icons">delete_sweep</i></v-btn>
                     </td>
                 </tr>
                
