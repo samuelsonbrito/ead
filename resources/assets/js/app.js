@@ -3,8 +3,10 @@ require('./bootstrap');
 import Vue from 'vue'
 import router from './routes/routes'
 import store from './store/store'
+import BootstrapVue from 'bootstrap-vue'
 import Snotify from 'vue-snotify'
 
+Vue.use(BootstrapVue);
 Vue.use(Snotify, {
     toast: {
         showProgressBar: false
