@@ -3,25 +3,26 @@
     <div>
         
         <h1>Cursos</h1>
+        
+        <v-layout row wrap>
 
-        <div class="row">
+            <v-flex sm6>
+                <v-btn color="success" :to="{ name: 'admin.courses.create'}">
+                    <i class="material-icons">add_circle</i>
+                </v-btn>
+            </v-flex>
 
-            <div class="col">
-                <router-link :to="{ name: 'admin.courses.create'}" class="btn btn-success">Cadastrar</router-link>
-            </div>
-
-            <div class="col">
+            <v-flex sm6>
                 <ead-search @search="searchFrom"></ead-search>
-            </div>
+            </v-flex>
 
-        </div>
+        </v-layout>
         
         <table class="table">
 
             <thead>
 
                 <tr>
-                    <th>ID</th>
                     <th>NOME</th>
                     <th>IMAGEM</th>
                     <th width="200">AÇÕES</th>
@@ -32,7 +33,6 @@
             <tbody>
 
                 <tr v-for="(course, index) in courses.data" :key="index">
-                    <td>{{ course.id }}</td>
                     <td>{{ course.name }}</td>
                     <td>
                         <div v-if="course.image">
@@ -40,9 +40,15 @@
                         </div>
                     </td>
                     <td>
-                        <router-link :to="{ name: 'admin.courses.edit', params: {id: course.id}  }" class="btn btn-primary">Editar</router-link>
+                        <v-layout row wrap>
+                            <v-flex sm6>
+                                <v-btn small flat color="info"  :to="{ name: 'admin.courses.edit', params: {id: course.id}  }"><i class="material-icons">create</i></v-btn>
+                            </v-flex>
+                            <v-flex sm6>
+                                <v-btn small flat color="error" @click.prevent="confirmDestroy(course)"><i class="material-icons">delete_sweep</i></v-btn>
 
-                        <a href="" class="btn btn-danger" @click.prevent="confirmDestroy(course)">Deletar</a>
+                            </v-flex>
+                        </v-layout>
                     </td>
                 </tr>
                

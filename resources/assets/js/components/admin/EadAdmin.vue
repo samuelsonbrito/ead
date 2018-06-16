@@ -7,7 +7,7 @@
       <v-list class="pa-1">
         <v-list-tile avatar>
           <v-list-tile-avatar>
-            <img src="https://randomuser.me/api/portraits/men/85.jpg" >
+            <img src="/image/user.png" >
           </v-list-tile-avatar>
           <v-list-tile-content>
             <v-list-tile-title>{{ user.name }}</v-list-tile-title>
@@ -73,8 +73,10 @@ export default {
             drawer: null,
             items: [
             { title: 'Home', icon: 'dashboard', url: {name: 'admin.dashboard'} },
-            { title: 'Categorias', icon: 'web_asset', url: {name: 'admin.categories'} },
-            { title: 'Cursos', icon: 'subscriptions', url: {name: 'admin.courses'} },
+            { title: 'Categorias', icon: 'loyalty', url: {name: 'admin.categories'} },
+            { title: 'Cursos', icon: 'shop', url: {name: 'admin.courses'} },
+            { title: 'Módulos', icon: 'web_asset', url: {name: 'admin.courses'} },
+            { title: 'Aulas', icon: 'subscriptions', url: {name: 'admin.courses'} },
         ]
         }
     },

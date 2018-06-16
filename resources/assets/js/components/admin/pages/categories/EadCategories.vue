@@ -3,24 +3,25 @@
     <div>
         
         <h1>Listagem de Categorias</h1>
-        <div class="row">
+        <v-layout row wrap>
 
-            <div class="col">
-                <router-link :to="{ name: 'admin.categories.create'}" class="btn btn-success">Cadastrar</router-link>
-            </div>
+            <v-flex sm6>
+                <v-btn color="success" :to="{ name: 'admin.categories.create'}">
+                    <i class="material-icons">add_circle</i>
+                </v-btn>
+            </v-flex>
 
-            <div class="col">
+            <v-flex sm6>
                 <ead-search @search="searchFrom"></ead-search>
-            </div>
+            </v-flex>
 
-        </div>
+        </v-layout>
         
         <table class="table">
 
             <thead>
 
                 <tr>
-                    <th>ID</th>
                     <th>NOME</th>
                     <th width="200">AÇÕES</th>
                 </tr>
@@ -30,11 +31,17 @@
             <tbody>
 
                 <tr v-for="(category, index) in categories.data" :key="index">
-                    <td>{{ category.id }}</td>
                     <td>{{ category.name }}</td>
                     <td>
-                        <v-btn small flat color="info"  :to="{ name: 'admin.categories.edit', params: {id: category.id}  }"><i class="material-icons">create</i></v-btn>
-                        <v-btn small flat color="error" @click.prevent="confirmDestroy(category)"><i class="material-icons">delete_sweep</i></v-btn>
+                        <v-layout row wrap>
+                            <v-flex sm6>
+                                <v-btn small flat color="info"  :to="{ name: 'admin.categories.edit', params: {id: category.id}  }"><i class="material-icons">create</i></v-btn>
+                            </v-flex>
+                            <v-flex sm6>
+                                <v-btn small flat color="error" @click.prevent="confirmDestroy(category)"><i class="material-icons">delete_sweep</i></v-btn>
+
+                            </v-flex>
+                        </v-layout>
                     </td>
                 </tr>
                

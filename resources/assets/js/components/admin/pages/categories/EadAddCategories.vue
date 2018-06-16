@@ -7,7 +7,7 @@
       <form class="form" @submit.prevent="onSubmit">
         <div :class="['form-group', { 'has-error': errors.name }]">
           <span v-if="errors.name">{{ errors.name[0] }}</span>
-          <input type="text" v-model="category.name" class="form-control" placeholder="Nome da Categoria">
+          <v-text-field type="text" v-model="category.name" class="form-control" label="Nome da categoria"></v-text-field>
         </div>
 
         <div class="form-group">

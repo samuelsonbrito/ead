@@ -3,10 +3,10 @@
     <div>
 
         <v-layout row>
-            <v-flex xs4>
+            <v-flex sm4>
                 <v-text-field type="text" v-model="filter" label="Pesquisa"></v-text-field>
             </v-flex>
-            <v-flex xs2>
+            <v-flex sm2>
                 <v-btn color="info" @click.prevent="search">
                     <i class="material-icons">search</i>
                 </v-btn>
