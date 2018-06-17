@@ -9,7 +9,7 @@ use App\Http\Requests\StoreUpdateModuleFormRequest;
 
 class ModuleController extends Controller
 {
-    private $module, $totalPage = 3;
+    private $module, $totalPage = 8;
 
     public function __construct(Module $module)
     {

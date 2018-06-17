@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 
 import store from '../store/store'
 
+import EadModules from '../components/admin/pages/modules/EadModules'
+import EadAddModules from '../components/admin/pages/modules/EadAddModules'
 import EadCategories from '../components/admin/pages/categories/EadCategories'
 import EadCourses from '../components/admin/pages/courses/EadCourses'
 import EadDashboard from '../components/admin/pages/dashboard/EadDashboard'
@@ -34,6 +36,9 @@ Vue.use(VueRouter)
                         component: EadAdmin,
                         meta: { auth: true },
                         children: [
+                                { path: 'modulos/create', component: EadAddModules, name: 'admin.modules.create'}, 
+                                { path: 'modulos/:id/edit', component: EadAddModules, name: 'admin.modules.edit', props: true},
+                                { path: 'modulos', component: EadModules, name:'admin.modules'},
                                 { path: 'categorias/create', component: EadAddCategories, name: 'admin.categories.create'}, 
                                 { path: 'categorias/:id/edit', component: EadAddCategories, name: 'admin.categories.edit', props: true},
                                 { path: 'categorias', component: EadCategories, name:'admin.categories', meta: {auth: true}},

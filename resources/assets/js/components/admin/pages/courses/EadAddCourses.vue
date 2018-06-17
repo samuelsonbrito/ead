@@ -21,16 +21,17 @@
 
         <div :class="['form-group', { 'has-error': errors.name }]">
           <span v-if="errors.name">{{ errors.name[0] }}</span>
-          <input type="text" v-model="course.name" class="form-control" placeholder="Nome do Curso">
+          <v-text-field type="text" v-model="course.name" class="form-control" label="Nome do curso"></v-text-field>
         </div>
 
-        <div :class="['form-group', { 'has-error': errors.category_id }]">
-          <span v-if="errors.category_id">{{ errors.category_id[0] }}</span>
-          <select class="form-control" v-model="course.category_id" name="categoria">
-            <option value="">Selecione a Categoria</option>
-            <option v-for="category in categories" :key="category.id" :value="category.id">{{ category.name }}</option>
-          </select>
-        </div>
+        <v-select
+          :items="categories"
+          label="Selecione a Categoria"
+          single-line
+          item-text="name"
+          v-model="course.category_id"
+          item-value="id"
+        ></v-select>
 
         <div class="form-group">
           <button type="submit" class="btn btn-primary">Salvar</button>
@@ -59,6 +60,7 @@ export default {
   created(){
     this.loadCategories()
     this.loadCourse()
+
   },
   computed:{
     categories(){
@@ -72,7 +74,9 @@ export default {
     loadCourse(){
       if(this.param){
         this.$store.dispatch('loadCourse', this.param)
-            .then(response => this.course = response)
+            .then(response => {
+              this.course = response
+            })
             .catch(error => {
                 this.$snotify.error('Courso não encontrado', '404')
                 this.$router.push({ name: 'admin.courses'})
