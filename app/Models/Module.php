@@ -10,7 +10,7 @@ class Module extends Model
 
     public function getResults($data, $total)
     {
-        if(!isset($data['filter']) && !isset($data['name']) && !isset($data['description']))
+        if(!isset($data['filter']) && !isset($data['name']) && !isset($data['description']) && !isset($data['course_id']))
             return $this->with('course')->paginate($total);
         
         
@@ -24,6 +24,10 @@ class Module extends Model
 
             if(isset($data['name'])){
                 $query->where('name', $data['name']);
+            }
+
+            if(isset($data['course_id'])){
+                $query->where('course_id', $data['course_id']);
             }
 
             if(isset($data['description'])){

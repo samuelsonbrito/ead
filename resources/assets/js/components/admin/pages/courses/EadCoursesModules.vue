@@ -2,12 +2,12 @@
 
     <div>
         
-        <h1>Cursos</h1>
+        <h1>Curso - {{course.name}}</h1>
         
         <v-layout row wrap>
 
             <v-flex sm6>
-                <v-btn color="success" :to="{ name: 'admin.courses.create'}">
+                <v-btn color="success" :to="{ name: 'admin.courses.modules.create', params: {course_id: course.id}}">
                     <i class="material-icons">add_circle</i>
                 </v-btn>
             </v-flex>
@@ -24,8 +24,6 @@
 
                 <tr>
                     <th>NOME</th>
-                    <th>CATEGORIA</th>
-                    <th>IMAGEM</th>
                     <th width="200">AÇÕES</th>
                 </tr>
 
@@ -33,21 +31,16 @@
 
             <tbody>
 
-                <tr v-for="(course, index) in courses.data" :key="index">
-                    <td><router-link :to="{ name: 'admin.courses.modules', params: {id: course.id}  }">{{ course.name }}</router-link></td>
-                    <td>{{ course.category.name }}</td>
-                    <td>
-                        <div v-if="course.image">
-                            <img :src="[`/storage/courses/${course.image}`]" class="image-preview" alt="">
-                        </div>
-                    </td>
+                <tr v-for="(module, index) in modules.data" :key="index">
+                    <td><router-link :to="{ name: 'admin.courses.modules', params: {id: module.id}  }">{{ module.name }}</router-link></td>
+                   
                     <td>
                         <v-layout row wrap>
                             <v-flex sm6>
-                                <v-btn small flat color="info"  :to="{ name: 'admin.courses.edit', params: {id: course.id}  }"><i class="material-icons">create</i></v-btn>
+                                <v-btn small flat color="info"  :to="{ name: 'admin.courses.edit', params: {id: module.id}  }"><i class="material-icons">create</i></v-btn>
                             </v-flex>
                             <v-flex sm6>
-                                <v-btn small flat color="error" @click.prevent="confirmDestroy(course)"><i class="material-icons">delete_sweep</i></v-btn>
+                                <v-btn small flat color="error" @click.prevent="confirmDestroy(module)"><i class="material-icons">delete_sweep</i></v-btn>
                             </v-flex>
                         </v-layout>
                     </td>
@@ -58,7 +51,7 @@
 
         </table>
         
-        <ead-pagination :pagination="courses" :offset="8" @paginate="loadCourses"></ead-pagination>
+        <ead-pagination :pagination="modules" :offset="8" @paginate="loadModules"></ead-pagination>
 
 
     </div>
@@ -72,33 +65,52 @@ import EadSearch from '../../../shared/EadSearch'
 
 export default {
   created(){
-    this.loadCourses()
+    this.loadModules()
+    this.loadCourse()
   },
   data(){
       return {
-          name: '',
+          param: this.$route.params.cid,
           search: '',
+          course:{
+              id: '',
+              name: '',
+          },
       }
   },
   computed:{
-      courses(){
-          return this.$store.state.courses.items
+      modules(){
+          return this.$store.state.modules.items
       },
       params(){
             return {
-                page: this.courses.current_page,
-                filter: this.search
+                page: this.modules.current_page,
+                course_id: this.course.id
             }
       }
   },
   methods:{
-      loadCourses(page = 1){
-          this.$store.dispatch('loadCourses', {...this.params, page})
+    loadCourse(){
+      if(this.param){
+        this.$store.dispatch('loadCourse', this.param)
+            .then(response => {
+              this.course = response
+            })
+            .catch(error => {
+                this.$snotify.error('Courso não encontrado', '404')
+                this.$router.push({ name: 'admin.courses'})
+            })
+      }else{
+          this.$router.push({ name: 'admin.courses'})
+      }
+    },
+      loadModules(page = 1){
+          this.$store.dispatch('loadModules', {...this.params, page})
       },
       
       searchFrom(filter){
             this.search = filter
-            this.loadCourses(1)
+            this.loadModules(1)
       },
       confirmDestroy(course){
             this.$snotify.error(`Deseja realmente deletar o curso ${course.name}`,'Deletar?', {

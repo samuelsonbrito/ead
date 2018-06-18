@@ -7,6 +7,8 @@ import EadModules from '../components/admin/pages/modules/EadModules'
 import EadAddModules from '../components/admin/pages/modules/EadAddModules'
 import EadCategories from '../components/admin/pages/categories/EadCategories'
 import EadCourses from '../components/admin/pages/courses/EadCourses'
+import EadCoursesModules from '../components/admin/pages/courses/EadCoursesModules'
+import EadAddCoursesModules from '../components/admin/pages/courses/EadAddCoursesModules'
 import EadDashboard from '../components/admin/pages/dashboard/EadDashboard'
 import EadAdmin from '../components/admin/EadAdmin'
 import EadAddCategories from '../components/admin/pages/categories/EadAddCategories'
@@ -45,6 +47,8 @@ Vue.use(VueRouter)
                                 { path: 'cursos', component: EadCourses, name:'admin.courses'},
                                 { path: 'cursos/create', component: EadAddCourses, name: 'admin.courses.create'}, 
                                 { path: 'cursos/:id/edit', component: EadAddCourses, name: 'admin.courses.edit', props: true},
+                                { path: 'cursos/:cid/modulos', component: EadCoursesModules, name:'admin.courses.modules'},
+                                { path: 'cursos/:cid/modulos/create', component: EadAddCoursesModules, name:'admin.courses.modules.create'},
                                 { path: '', component: EadDashboard, name:'admin.dashboard'},
                         ]
                 },
