@@ -24,6 +24,7 @@
 
                 <tr>
                     <th>NOME</th>
+                    <th>CURSO</th>
                     <th width="200">AÇÕES</th>
                 </tr>
 
@@ -33,6 +34,7 @@
 
                 <tr v-for="(module, index) in modules.data" :key="index">
                     <td>{{ module.name }}</td>
+                    <td>{{ module.course.name }}</td>
                     <td>
                         <v-layout row wrap>
                             <v-flex sm6>

@@ -24,6 +24,7 @@
 
                 <tr>
                     <th>NOME</th>
+                    <th>CATEGORIA</th>
                     <th>IMAGEM</th>
                     <th width="200">AÇÕES</th>
                 </tr>
@@ -34,6 +35,7 @@
 
                 <tr v-for="(course, index) in courses.data" :key="index">
                     <td>{{ course.name }}</td>
+                    <td>{{ course.category.name }}</td>
                     <td>
                         <div v-if="course.image">
                             <img :src="[`/storage/courses/${course.image}`]" class="image-preview" alt="">

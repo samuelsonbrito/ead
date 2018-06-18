@@ -13,6 +13,7 @@ export default{
         
         http.get('courses', {params})
             .then(response => {
+                console.log(response.data.data)
                 context.commit('LOAD_COURSES',response.data)
             }).catch(error => {
                 console.log(error)

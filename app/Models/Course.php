@@ -11,9 +11,9 @@ class Course extends Model
     public function getResults(array $data, int $total): object
     {
         if(!isset($data['filter']) && !isset($data['name']) && !isset($data['description']) && !isset($data['category_id']))
-            return $this->paginate($total);
+            return $this->with('category')->paginate($total);
                 
-        return $this->where(function($query) use ($data){
+        return $this->with('category')->where(function($query) use ($data){
 
             if(isset($data['filter'])){
                 $filter = $data['filter'];
@@ -40,5 +40,10 @@ class Course extends Model
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function modules()
+    {
+        return $this->hasMany(Module::class);
     }
 }

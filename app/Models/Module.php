@@ -11,7 +11,7 @@ class Module extends Model
     public function getResults($data, $total)
     {
         if(!isset($data['filter']) && !isset($data['name']) && !isset($data['description']))
-            return $this->paginate($total);
+            return $this->with('course')->paginate($total);
         
         
         return $this->where(function($query) use ($data){
@@ -30,7 +30,12 @@ class Module extends Model
                 $description = $data['description'];
                 $query->where('description', 'LIKE', '%{$description}%');
             }
-        })->paginate($total);
+        })->with('course')->paginate($total);
         
+    }
+
+    public function course()
+    {
+        return $this->belongsTo(Course::class);
     }
 }
