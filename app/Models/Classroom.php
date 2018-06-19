@@ -10,7 +10,7 @@ class Classroom extends Model
 
     public function getResults($data, $total)
     {
-        if(!isset($data['filter']) && !isset($data['name']) && !isset($data['description']) && !isset($data['course_id']))
+        if(!isset($data['filter']) && !isset($data['name']) && !isset($data['description']) && !isset($data['module_id']))
             return $this->with('module')->paginate($total);
         
         

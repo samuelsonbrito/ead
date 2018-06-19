@@ -10,6 +10,7 @@ import EadCourses from '../components/admin/pages/courses/EadCourses'
 import EadCoursesModules from '../components/admin/pages/courses/EadCoursesModules'
 import EadAddCoursesModules from '../components/admin/pages/courses/EadAddCoursesModules'
 import EadCoursesModulesClassrooms from '../components/admin/pages/courses/EadCoursesModulesClassrooms'
+import EadAddCoursesModulesClassrooms from '../components/admin/pages/courses/EadAddCoursesModulesClassrooms'
 import EadDashboard from '../components/admin/pages/dashboard/EadDashboard'
 import EadAdmin from '../components/admin/EadAdmin'
 import EadAddCategories from '../components/admin/pages/categories/EadAddCategories'
@@ -49,9 +50,13 @@ const routes = [
                 { path: 'cursos/create', component: EadAddCourses, name: 'admin.courses.create' }, 
                 { path: 'cursos/:id/edit', component: EadAddCourses, name: 'admin.courses.edit', props: true },
                 { path: 'cursos/:cid/modulos', component: EadCoursesModules, name:'admin.courses.modules' },
-                { path: 'cursos/:cid/modulos/:mid/classrooms', component: EadCoursesModulesClassrooms, name:'admin.courses.modules.classrooms' },
                 { path: 'cursos/:cid/modulos/create', component: EadAddCoursesModules, name:'admin.courses.modules.create' },
+                { path: 'cursos/:cid/modulos/:id/edit', component: EadAddCoursesModules, name:'admin.courses.modules.edit' },
+                { path: 'cursos/:cid/modulos/:mid/classrooms', component: EadCoursesModulesClassrooms, name:'admin.courses.modules.classrooms' },
+                { path: 'cursos/:cid/modulos/:mid/classrooms/create', component: EadAddCoursesModulesClassrooms, name:'admin.courses.modules.classrooms.create' },
+                { path: 'cursos/:cid/modulos/:mid/classrooms/:id/edit', component: EadAddCoursesModulesClassrooms, name:'admin.courses.modules.classrooms.edit' },
                 { path: '', component: EadDashboard, name:'admin.dashboard' },
+
         ]
 },
 

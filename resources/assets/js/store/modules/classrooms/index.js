@@ -20,7 +20,6 @@ export default{
 
             http.get('classrooms', {params})
                 .then(response => {
-                    console.log(response)
                     context.commit('LOAD_CLASSROOMS', response.data)
                 }).catch(error => {
                     console.log('Erro: '+error)

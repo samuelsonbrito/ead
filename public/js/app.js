@@ -36714,24 +36714,27 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_admin_pages_courses_EadAddCoursesModules___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__components_admin_pages_courses_EadAddCoursesModules__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_admin_pages_courses_EadCoursesModulesClassrooms__ = __webpack_require__(337);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_admin_pages_courses_EadCoursesModulesClassrooms___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__components_admin_pages_courses_EadCoursesModulesClassrooms__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_admin_pages_dashboard_EadDashboard__ = __webpack_require__(154);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_admin_pages_dashboard_EadDashboard___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__components_admin_pages_dashboard_EadDashboard__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_admin_EadAdmin__ = __webpack_require__(159);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_admin_EadAdmin___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__components_admin_EadAdmin__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_admin_pages_categories_EadAddCategories__ = __webpack_require__(164);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_admin_pages_categories_EadAddCategories___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12__components_admin_pages_categories_EadAddCategories__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_admin_pages_courses_EadAddCourses__ = __webpack_require__(169);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_admin_pages_courses_EadAddCourses___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13__components_admin_pages_courses_EadAddCourses__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_site_pages_home_EadHome__ = __webpack_require__(174);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_site_pages_home_EadHome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14__components_site_pages_home_EadHome__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_site_EadSite__ = __webpack_require__(189);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_site_EadSite___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15__components_site_EadSite__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_site_pages_contact_EadContact__ = __webpack_require__(201);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_site_pages_contact_EadContact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16__components_site_pages_contact_EadContact__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_site_pages_course_EadCourseDetail__ = __webpack_require__(203);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_site_pages_course_EadCourseDetail___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_17__components_site_pages_course_EadCourseDetail__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_site_pages_login_EadLogin__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_site_pages_login_EadLogin___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_18__components_site_pages_login_EadLogin__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_admin_pages_courses_EadAddCoursesModulesClassrooms__ = __webpack_require__(343);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_admin_pages_courses_EadAddCoursesModulesClassrooms___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__components_admin_pages_courses_EadAddCoursesModulesClassrooms__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_admin_pages_dashboard_EadDashboard__ = __webpack_require__(154);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_admin_pages_dashboard_EadDashboard___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__components_admin_pages_dashboard_EadDashboard__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_admin_EadAdmin__ = __webpack_require__(159);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_admin_EadAdmin___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12__components_admin_EadAdmin__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_admin_pages_categories_EadAddCategories__ = __webpack_require__(164);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_admin_pages_categories_EadAddCategories___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13__components_admin_pages_categories_EadAddCategories__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_admin_pages_courses_EadAddCourses__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_admin_pages_courses_EadAddCourses___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14__components_admin_pages_courses_EadAddCourses__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_site_pages_home_EadHome__ = __webpack_require__(174);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_site_pages_home_EadHome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15__components_site_pages_home_EadHome__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_site_EadSite__ = __webpack_require__(189);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_site_EadSite___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16__components_site_EadSite__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_site_pages_contact_EadContact__ = __webpack_require__(201);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_site_pages_contact_EadContact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_17__components_site_pages_contact_EadContact__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_site_pages_course_EadCourseDetail__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_site_pages_course_EadCourseDetail___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_18__components_site_pages_course_EadCourseDetail__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_site_pages_login_EadLogin__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_site_pages_login_EadLogin___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_19__components_site_pages_login_EadLogin__);
+
 
 
 
@@ -36758,13 +36761,13 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
 
 var routes = [{
         path: '/',
-        component: __WEBPACK_IMPORTED_MODULE_15__components_site_EadSite___default.a,
-        children: [{ path: 'login', component: __WEBPACK_IMPORTED_MODULE_18__components_site_pages_login_EadLogin___default.a, name: 'login', meta: { auth: false } }, { path: 'cursos/:id', component: __WEBPACK_IMPORTED_MODULE_17__components_site_pages_course_EadCourseDetail___default.a, name: 'course.detail', props: true }, { path: '', component: __WEBPACK_IMPORTED_MODULE_14__components_site_pages_home_EadHome___default.a, name: 'home' }, { path: 'contato', component: __WEBPACK_IMPORTED_MODULE_16__components_site_pages_contact_EadContact___default.a, name: 'contact' }]
+        component: __WEBPACK_IMPORTED_MODULE_16__components_site_EadSite___default.a,
+        children: [{ path: 'login', component: __WEBPACK_IMPORTED_MODULE_19__components_site_pages_login_EadLogin___default.a, name: 'login', meta: { auth: false } }, { path: 'cursos/:id', component: __WEBPACK_IMPORTED_MODULE_18__components_site_pages_course_EadCourseDetail___default.a, name: 'course.detail', props: true }, { path: '', component: __WEBPACK_IMPORTED_MODULE_15__components_site_pages_home_EadHome___default.a, name: 'home' }, { path: 'contato', component: __WEBPACK_IMPORTED_MODULE_17__components_site_pages_contact_EadContact___default.a, name: 'contact' }]
 }, {
         path: '/admin',
-        component: __WEBPACK_IMPORTED_MODULE_11__components_admin_EadAdmin___default.a,
+        component: __WEBPACK_IMPORTED_MODULE_12__components_admin_EadAdmin___default.a,
         meta: { auth: true },
-        children: [{ path: 'modulos/create', component: __WEBPACK_IMPORTED_MODULE_4__components_admin_pages_modules_EadAddModules___default.a, name: 'admin.modules.create' }, { path: 'modulos/:id/edit', component: __WEBPACK_IMPORTED_MODULE_4__components_admin_pages_modules_EadAddModules___default.a, name: 'admin.modules.edit', props: true }, { path: 'modulos', component: __WEBPACK_IMPORTED_MODULE_3__components_admin_pages_modules_EadModules___default.a, name: 'admin.modules' }, { path: 'categorias/create', component: __WEBPACK_IMPORTED_MODULE_12__components_admin_pages_categories_EadAddCategories___default.a, name: 'admin.categories.create' }, { path: 'categorias/:id/edit', component: __WEBPACK_IMPORTED_MODULE_12__components_admin_pages_categories_EadAddCategories___default.a, name: 'admin.categories.edit', props: true }, { path: 'categorias', component: __WEBPACK_IMPORTED_MODULE_5__components_admin_pages_categories_EadCategories___default.a, name: 'admin.categories', meta: { auth: true } }, { path: 'cursos', component: __WEBPACK_IMPORTED_MODULE_6__components_admin_pages_courses_EadCourses___default.a, name: 'admin.courses' }, { path: 'cursos/create', component: __WEBPACK_IMPORTED_MODULE_13__components_admin_pages_courses_EadAddCourses___default.a, name: 'admin.courses.create' }, { path: 'cursos/:id/edit', component: __WEBPACK_IMPORTED_MODULE_13__components_admin_pages_courses_EadAddCourses___default.a, name: 'admin.courses.edit', props: true }, { path: 'cursos/:cid/modulos', component: __WEBPACK_IMPORTED_MODULE_7__components_admin_pages_courses_EadCoursesModules___default.a, name: 'admin.courses.modules' }, { path: 'cursos/:cid/modulos/:mid/classrooms', component: __WEBPACK_IMPORTED_MODULE_9__components_admin_pages_courses_EadCoursesModulesClassrooms___default.a, name: 'admin.courses.modules.classrooms' }, { path: 'cursos/:cid/modulos/create', component: __WEBPACK_IMPORTED_MODULE_8__components_admin_pages_courses_EadAddCoursesModules___default.a, name: 'admin.courses.modules.create' }, { path: '', component: __WEBPACK_IMPORTED_MODULE_10__components_admin_pages_dashboard_EadDashboard___default.a, name: 'admin.dashboard' }]
+        children: [{ path: 'modulos/create', component: __WEBPACK_IMPORTED_MODULE_4__components_admin_pages_modules_EadAddModules___default.a, name: 'admin.modules.create' }, { path: 'modulos/:id/edit', component: __WEBPACK_IMPORTED_MODULE_4__components_admin_pages_modules_EadAddModules___default.a, name: 'admin.modules.edit', props: true }, { path: 'modulos', component: __WEBPACK_IMPORTED_MODULE_3__components_admin_pages_modules_EadModules___default.a, name: 'admin.modules' }, { path: 'categorias/create', component: __WEBPACK_IMPORTED_MODULE_13__components_admin_pages_categories_EadAddCategories___default.a, name: 'admin.categories.create' }, { path: 'categorias/:id/edit', component: __WEBPACK_IMPORTED_MODULE_13__components_admin_pages_categories_EadAddCategories___default.a, name: 'admin.categories.edit', props: true }, { path: 'categorias', component: __WEBPACK_IMPORTED_MODULE_5__components_admin_pages_categories_EadCategories___default.a, name: 'admin.categories', meta: { auth: true } }, { path: 'cursos', component: __WEBPACK_IMPORTED_MODULE_6__components_admin_pages_courses_EadCourses___default.a, name: 'admin.courses' }, { path: 'cursos/create', component: __WEBPACK_IMPORTED_MODULE_14__components_admin_pages_courses_EadAddCourses___default.a, name: 'admin.courses.create' }, { path: 'cursos/:id/edit', component: __WEBPACK_IMPORTED_MODULE_14__components_admin_pages_courses_EadAddCourses___default.a, name: 'admin.courses.edit', props: true }, { path: 'cursos/:cid/modulos', component: __WEBPACK_IMPORTED_MODULE_7__components_admin_pages_courses_EadCoursesModules___default.a, name: 'admin.courses.modules' }, { path: 'cursos/:cid/modulos/create', component: __WEBPACK_IMPORTED_MODULE_8__components_admin_pages_courses_EadAddCoursesModules___default.a, name: 'admin.courses.modules.create' }, { path: 'cursos/:cid/modulos/:id/edit', component: __WEBPACK_IMPORTED_MODULE_8__components_admin_pages_courses_EadAddCoursesModules___default.a, name: 'admin.courses.modules.edit' }, { path: 'cursos/:cid/modulos/:mid/classrooms', component: __WEBPACK_IMPORTED_MODULE_9__components_admin_pages_courses_EadCoursesModulesClassrooms___default.a, name: 'admin.courses.modules.classrooms' }, { path: 'cursos/:cid/modulos/:mid/classrooms/create', component: __WEBPACK_IMPORTED_MODULE_10__components_admin_pages_courses_EadAddCoursesModulesClassrooms___default.a, name: 'admin.courses.modules.classrooms.create' }, { path: 'cursos/:cid/modulos/:mid/classrooms/:id/edit', component: __WEBPACK_IMPORTED_MODULE_10__components_admin_pages_courses_EadAddCoursesModulesClassrooms___default.a, name: 'admin.courses.modules.classrooms.edit' }, { path: '', component: __WEBPACK_IMPORTED_MODULE_11__components_admin_pages_dashboard_EadDashboard___default.a, name: 'admin.dashboard' }]
 }];
 
 var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
@@ -42696,7 +42699,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         confirmDestroy: function confirmDestroy(course) {
             var _this2 = this;
 
-            this.$snotify.error('Deseja realmente deletar o curso ' + course.name, 'Deletar?', {
+            this.$snotify.error('Deseja realmente deletar o m\xF3dulo ' + course.name, 'Deletar?', {
                 timeout: 10000,
                 showProgressBar: true,
                 closeOnClick: true,
@@ -42710,9 +42713,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         destroy: function destroy(course) {
             var _this3 = this;
 
-            this.$store.dispatch('destroyCourse', course.id).then(function () {
-                _this3.$snotify.success('Sucesso ao deletar o curso: ' + course.name);
-                _this3.loadCourses();
+            this.$store.dispatch('destroyModule', course.id).then(function () {
+                _this3.$snotify.success('Sucesso ao deletar o m\xF3dulo: ' + course.name);
+                _this3.loadModules();
             }).catch(function () {
                 _this3.$snotify.error('Erro ao deletar o curso: ' + course.name);
             });
@@ -42736,7 +42739,7 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("h1", [_vm._v("Curso - " + _vm._s(_vm.course.name))]),
+      _c("h1", [_vm._v("Módulos - " + _vm._s(_vm.course.name))]),
       _vm._v(" "),
       _c(
         "v-layout",
@@ -42822,7 +42825,7 @@ var render = function() {
                                 flat: "",
                                 color: "info",
                                 to: {
-                                  name: "admin.courses.edit",
+                                  name: "admin.courses.modules.edit",
                                   params: { id: module.id }
                                 }
                               }
@@ -77162,7 +77165,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             },
             module: {
                 id: '',
-                name: ''
+                name: '',
+                course: {}
             },
             classroom: {
                 id: '',
@@ -77189,6 +77193,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             if (this.mid) {
                 this.$store.dispatch('loadModule', this.mid).then(function (response) {
                     _this.module = response;
+                    console.log('Isso: ');
+                    console.log(response);
                 }).catch(function (error) {
                     _this.$snotify.error('Courso não encontrado', '404');
                     _this.$router.push({ name: 'admin.courses' });
@@ -77209,7 +77215,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         confirmDestroy: function confirmDestroy(course) {
             var _this2 = this;
 
-            this.$snotify.error('Deseja realmente deletar o curso ' + course.name, 'Deletar?', {
+            this.$snotify.error('Deseja realmente deletar a aula ' + course.name, 'Deletar?', {
                 timeout: 10000,
                 showProgressBar: true,
                 closeOnClick: true,
@@ -77223,8 +77229,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         destroy: function destroy(course) {
             var _this3 = this;
 
-            this.$store.dispatch('destroyCourse', course.id).then(function () {
-                _this3.$snotify.success('Sucesso ao deletar o curso: ' + course.name);
+            this.$store.dispatch('destroyClassroom', course.id).then(function () {
+                _this3.$snotify.success('Sucesso ao deletar a aula: ' + course.name);
                 _this3.loadClassrooms();
             }).catch(function () {
                 _this3.$snotify.error('Erro ao deletar o curso: ' + course.name);
@@ -77249,9 +77255,7 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("h1", [
-        _vm._v("Curso - " + _vm._s(_vm.course.name) + " " + _vm._s(_vm.param))
-      ]),
+      _c("h1", [_vm._v("Aulas - Módulo: " + _vm._s(_vm.module.name) + "  ")]),
       _vm._v(" "),
       _c(
         "v-layout",
@@ -77267,8 +77271,8 @@ var render = function() {
                   attrs: {
                     color: "success",
                     to: {
-                      name: "admin.courses.modules.create",
-                      params: { course_id: _vm.course.id }
+                      name: "admin.courses.modules.classrooms.create",
+                      params: { module_id: _vm.module.id }
                     }
                   }
                 },
@@ -77337,7 +77341,7 @@ var render = function() {
                                 flat: "",
                                 color: "info",
                                 to: {
-                                  name: "admin.courses.edit",
+                                  name: "admin.courses.modules.classrooms.edit",
                                   params: { id: module.id }
                                 }
                               }
@@ -77444,7 +77448,6 @@ if (false) {
             context.commit('PRELOADER', true);
 
             __WEBPACK_IMPORTED_MODULE_0__config_config__["a" /* http */].get('classrooms', { params: params }).then(function (response) {
-                console.log(response);
                 context.commit('LOAD_CLASSROOMS', response.data);
             }).catch(function (error) {
                 console.log('Erro: ' + error);
@@ -77514,6 +77517,272 @@ if (false) {
     getters: {}
 
 });
+
+/***/ }),
+/* 343 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(344)
+}
+var normalizeComponent = __webpack_require__(4)
+/* script */
+var __vue_script__ = __webpack_require__(346)
+/* template */
+var __vue_template__ = __webpack_require__(347)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-3e0b6370"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\admin\\pages\\courses\\EadAddCoursesModulesClassrooms.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-3e0b6370", Component.options)
+  } else {
+    hotAPI.reload("data-v-3e0b6370", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 344 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(345);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(6)("6cbc57cc", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../../../node_modules/css-loader/index.js!../../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3e0b6370\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./EadAddCoursesModulesClassrooms.vue", function() {
+     var newContent = require("!!../../../../../../../node_modules/css-loader/index.js!../../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3e0b6370\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./EadAddCoursesModulesClassrooms.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 345 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(3)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.has-error[data-v-3e0b6370]{\r\n  color: red\n}\n.has-error input[data-v-3e0b6370]{\r\n  border: 1px solid red\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 346 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      param: this.$route.params.id,
+      classroom: {
+        id: '',
+        name: '',
+        description: '',
+        module_id: this.$route.params.mid
+      },
+      errors: {}
+    };
+  },
+  created: function created() {
+    this.loadModule();
+  },
+
+  methods: {
+    loadModule: function loadModule() {
+      var _this = this;
+
+      if (this.param) {
+        this.$store.dispatch('loadClassroom', this.param).then(function (response) {
+          return _this.classroom = response;
+        }).catch(function (error) {
+          _this.$snotify.error('Categoria não encontrada', '404');
+          _this.$router.push({ name: 'admin.categories' });
+        });
+      }
+    },
+    onSubmit: function onSubmit() {
+      var _this2 = this;
+
+      this.$store.dispatch('storeClassroom', this.classroom).then(function () {
+        _this2.$snotify.success('Salvo com sucesso');
+        _this2.$router.push({ name: 'admin.courses.modules.classrooms', params: { mid: _this2.classroom.module_id } });
+      }).catch(function (error) {
+        _this2.$snotify.error('Erro ao salvar');
+        _this2.errors = error.response.data.errors;
+      });
+    }
+  }
+});
+
+/***/ }),
+/* 347 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    this.classroom.id
+      ? _c("h1", [_vm._v("Atualizar Aula")])
+      : _c("h1", [_vm._v("Cadastro de Aula")]),
+    _vm._v(" "),
+    _c(
+      "form",
+      {
+        staticClass: "form",
+        on: {
+          submit: function($event) {
+            $event.preventDefault()
+            return _vm.onSubmit($event)
+          }
+        }
+      },
+      [
+        _c(
+          "div",
+          { class: ["form-group", { "has-error": _vm.errors.name }] },
+          [
+            _vm.errors.name
+              ? _c("span", [_vm._v(_vm._s(_vm.errors.name[0]))])
+              : _vm._e(),
+            _vm._v(" "),
+            _c("v-text-field", {
+              staticClass: "form-control",
+              attrs: { type: "text", label: "Nome da categoria" },
+              model: {
+                value: _vm.classroom.name,
+                callback: function($$v) {
+                  _vm.$set(_vm.classroom, "name", $$v)
+                },
+                expression: "classroom.name"
+              }
+            })
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { class: ["form-group", { "has-error": _vm.errors.description }] },
+          [
+            _vm.errors.description
+              ? _c("span", [_vm._v(_vm._s(_vm.errors.description[0]))])
+              : _vm._e(),
+            _vm._v(" "),
+            _c("v-text-field", {
+              staticClass: "form-control",
+              attrs: { type: "text", label: "Descrição" },
+              model: {
+                value: _vm.classroom.description,
+                callback: function($$v) {
+                  _vm.$set(_vm.classroom, "description", $$v)
+                },
+                expression: "classroom.description"
+              }
+            })
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _vm._m(0)
+      ]
+    )
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c(
+        "button",
+        { staticClass: "btn btn-primary", attrs: { type: "submit" } },
+        [_vm._v("Salvar")]
+      )
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-3e0b6370", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

@@ -2,7 +2,7 @@
 
     <div>
         
-        <h1>Curso - {{course.name}}</h1>
+        <h1>Módulos - {{course.name}}</h1>
         
         <v-layout row wrap>
 
@@ -37,7 +37,7 @@
                     <td>
                         <v-layout row wrap>
                             <v-flex sm6>
-                                <v-btn small flat color="info"  :to="{ name: 'admin.courses.edit', params: {id: module.id}  }"><i class="material-icons">create</i></v-btn>
+                                <v-btn small flat color="info"  :to="{ name: 'admin.courses.modules.edit', params: {id: module.id}  }"><i class="material-icons">create</i></v-btn>
                             </v-flex>
                             <v-flex sm6>
                                 <v-btn small flat color="error" @click.prevent="confirmDestroy(module)"><i class="material-icons">delete_sweep</i></v-btn>
@@ -117,7 +117,7 @@ export default {
     },
 
     confirmDestroy(course){
-        this.$snotify.error(`Deseja realmente deletar o curso ${course.name}`,'Deletar?', {
+        this.$snotify.error(`Deseja realmente deletar o módulo ${course.name}`,'Deletar?', {
             timeout: 10000,
             showProgressBar: true,
             closeOnClick: true,
@@ -129,10 +129,10 @@ export default {
     },
 
     destroy(course){
-        this.$store.dispatch('destroyCourse', course.id)
+        this.$store.dispatch('destroyModule', course.id)
         .then(()=>{
-            this.$snotify.success(`Sucesso ao deletar o curso: ${course.name}`)
-            this.loadCourses()
+            this.$snotify.success(`Sucesso ao deletar o módulo: ${course.name}`)
+            this.loadModules()
         })
         .catch(()=>{
             this.$snotify.error(`Erro ao deletar o curso: ${course.name}`)

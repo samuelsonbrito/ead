@@ -2,12 +2,12 @@
 
     <div>
         
-        <h1>Curso - {{course.name}} {{param}}</h1>
+        <h1>Aulas - Módulo: {{module.name}}  </h1>
         
         <v-layout row wrap>
 
             <v-flex sm6>
-                <v-btn color="success" :to="{ name: 'admin.courses.modules.create', params: {course_id: course.id}}">
+                <v-btn color="success" :to="{ name: 'admin.courses.modules.classrooms.create', params: {module_id: module.id}}">
                     <i class="material-icons">add_circle</i>
                 </v-btn>
             </v-flex>
@@ -37,7 +37,7 @@
                     <td>
                         <v-layout row wrap>
                             <v-flex sm6>
-                                <v-btn small flat color="info"  :to="{ name: 'admin.courses.edit', params: {id: module.id}  }"><i class="material-icons">create</i></v-btn>
+                                <v-btn small flat color="info"  :to="{ name: 'admin.courses.modules.classrooms.edit', params: {id: module.id}  }"><i class="material-icons">create</i></v-btn>
                             </v-flex>
                             <v-flex sm6>
                                 <v-btn small flat color="error" @click.prevent="confirmDestroy(module)"><i class="material-icons">delete_sweep</i></v-btn>
@@ -79,7 +79,8 @@ export default {
           },
           module:{
               id: '',
-              name: ''
+              name: '',
+              course: {}
           },
           classroom:{
               id: '',
@@ -106,6 +107,8 @@ export default {
             this.$store.dispatch('loadModule', this.mid)
                 .then(response => {
                 this.module = response
+                console.log('Isso: ')
+                console.log(response)
                 })
                 .catch(error => {
                     this.$snotify.error('Courso não encontrado', '404')
@@ -126,7 +129,7 @@ export default {
     },
 
     confirmDestroy(course){
-        this.$snotify.error(`Deseja realmente deletar o curso ${course.name}`,'Deletar?', {
+        this.$snotify.error(`Deseja realmente deletar a aula ${course.name}`,'Deletar?', {
             timeout: 10000,
             showProgressBar: true,
             closeOnClick: true,
@@ -138,9 +141,9 @@ export default {
     },
 
     destroy(course){
-        this.$store.dispatch('destroyCourse', course.id)
+        this.$store.dispatch('destroyClassroom', course.id)
         .then(()=>{
-            this.$snotify.success(`Sucesso ao deletar o curso: ${course.name}`)
+            this.$snotify.success(`Sucesso ao deletar a aula: ${course.name}`)
             this.loadClassrooms()
         })
         .catch(()=>{
