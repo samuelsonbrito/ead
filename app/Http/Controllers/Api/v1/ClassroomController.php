@@ -9,7 +9,7 @@ use App\Http\Requests\StoreUpdateClassroomFormRequest;
 
 class ClassroomController extends Controller
 {
-    private $classroom;
+    private $classroom, $totalPage = 8;
 
     public function __construct(Classroom $classroom)
     {
@@ -18,7 +18,7 @@ class ClassroomController extends Controller
 
     public function index(Request $request)
     {
-        $classroom = $this->classroom->getResults();
+        $classroom = $this->classroom->getResults($request->all(), $this->totalPage);
 
         return response()->json($classroom);
     }

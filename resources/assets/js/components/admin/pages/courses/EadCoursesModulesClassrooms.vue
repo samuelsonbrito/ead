@@ -2,7 +2,7 @@
 
     <div>
         
-        <h1>Curso - {{course.name}}</h1>
+        <h1>Curso - {{course.name}} {{param}}</h1>
         
         <v-layout row wrap>
 
@@ -31,8 +31,8 @@
 
             <tbody>
 
-                <tr v-for="(module, index) in modules.data" :key="index">
-                    <td><router-link :to="{ name: 'admin.courses.modules.classrooms', params: {mid: module.id, cid: module.course.id}  }">{{ module.name }}</router-link></td>
+                <tr v-for="(module, index) in classrooms.data" :key="index">
+                    <td><router-link :to="{ name: 'admin.courses.modules', params: {id: module.id}  }">{{ module.name }}</router-link></td>
                    
                     <td>
                         <v-layout row wrap>
@@ -51,7 +51,7 @@
 
         </table>
         
-        <ead-pagination :pagination="modules" :offset="8" @paginate="loadModules"></ead-pagination>
+        <ead-pagination :pagination="classrooms" :offset="8" @paginate="loadClassrooms"></ead-pagination>
 
 
     </div>
@@ -65,38 +65,47 @@ import EadSearch from '../../../shared/EadSearch'
 
 export default {
   created(){
-    this.loadModules()
-    this.loadCourse()
+    this.loadModule()
+    this.loadClassrooms()
   },
   data(){
       return {
           param: this.$route.params.cid,
+          mid: this.$route.params.mid,
           search: '',
           course:{
               id: '',
               name: '',
           },
+          module:{
+              id: '',
+              name: ''
+          },
+          classroom:{
+              id: '',
+              name: ''
+          }
       }
   },
   computed:{
-      modules(){
-          return this.$store.state.modules.items
+      classrooms(){
+          return this.$store.state.classrooms.items
       },
       params(){
             return {
-                page: this.modules.current_page,
-                course_id: this.param
+                page: this.classrooms.current_page,
+                module_id: this.mid
             }
       }
   },
   methods:{
 
-    loadCourse(){
+    loadModule(){
 
-        if(this.param){
-            this.$store.dispatch('loadCourse', this.param)
+        if(this.mid){
+            this.$store.dispatch('loadModule', this.mid)
                 .then(response => {
-                this.course = response
+                this.module = response
                 })
                 .catch(error => {
                     this.$snotify.error('Courso não encontrado', '404')
@@ -107,13 +116,13 @@ export default {
         }
     },
 
-    loadModules(page = 1){
-        this.$store.dispatch('loadModules', {...this.params, page})
+    loadClassrooms(page = 1){
+        this.$store.dispatch('loadClassrooms', {...this.params, page})
     },
     
     searchFrom(filter){
         this.search = filter
-        this.loadModules(1)
+        this.loadClassrooms(1)
     },
 
     confirmDestroy(course){
@@ -132,7 +141,7 @@ export default {
         this.$store.dispatch('destroyCourse', course.id)
         .then(()=>{
             this.$snotify.success(`Sucesso ao deletar o curso: ${course.name}`)
-            this.loadCourses()
+            this.loadClassrooms()
         })
         .catch(()=>{
             this.$snotify.error(`Erro ao deletar o curso: ${course.name}`)

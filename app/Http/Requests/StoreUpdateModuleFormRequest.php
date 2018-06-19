@@ -24,7 +24,7 @@ class StoreUpdateModuleFormRequest extends FormRequest
     public function rules()
     {
         return [
-            "name" => "required|min:3|max:50|unique:modules,name,{$this->$id},id",
+            "name" => "required|min:3|max:50",
             "description" => "max:1000",
             "course_id" => "required|exists:courses,id"
         ];

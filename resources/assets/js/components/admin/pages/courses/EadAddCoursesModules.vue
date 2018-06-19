@@ -10,6 +10,11 @@
           <v-text-field type="text" v-model="module.name" class="form-control" label="Nome da categoria"></v-text-field>
         </div>
 
+        <div :class="['form-group', { 'has-error': errors.description }]">
+          <span v-if="errors.description">{{ errors.description[0] }}</span>
+          <v-text-field type="text" v-model="module.description" class="form-control" label="Descrição"></v-text-field>
+        </div>
+
         <div class="form-group">
           <button type="submit" class="btn btn-primary">Salvar</button>
         </div>
@@ -26,6 +31,8 @@ export default {
       module:{
         id: '',
         name: '',
+        description: '',
+        course_id: this.$route.params.cid,
       },
       errors: {}
     }
@@ -48,7 +55,7 @@ export default {
       this.$store.dispatch('storeModule', this.module)
         .then(() => {
           this.$snotify.success('Salvo com sucesso')
-          this.$router.push({ name: 'admin.categories'})
+          this.$router.push({ name: 'admin.courses.modules', params: {cid: this.module.course_id}})
         })
         .catch((error)=>{
           this.$snotify.error('Erro ao salvar')

@@ -34,7 +34,7 @@
             <tbody>
 
                 <tr v-for="(course, index) in courses.data" :key="index">
-                    <td><router-link :to="{ name: 'admin.courses.modules', params: {id: course.id}  }">{{ course.name }}</router-link></td>
+                    <td><router-link :to="{ name: 'admin.courses.modules', params: {cid: course.id}  }">{{ course.name }}</router-link></td>
                     <td>{{ course.category.name }}</td>
                     <td>
                         <div v-if="course.image">
