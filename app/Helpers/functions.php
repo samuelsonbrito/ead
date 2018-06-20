@@ -38,7 +38,7 @@ function createUrl($string)
 }
 
 function checkPermission($permissions){
-    $userAccess = getMyPermission(auth()->user()->is_permission);
+    $userAccess = getMyPermission(auth()->user()->level);
     foreach ($permissions as $key => $value) {
       if($value == $userAccess){
         return true;
@@ -55,7 +55,7 @@ function checkPermission($permissions){
         return 'admin';
         break;
       case 2:
-        return 'superadmin';
+        return 'student';
         break;
       default:
         return 'user';
