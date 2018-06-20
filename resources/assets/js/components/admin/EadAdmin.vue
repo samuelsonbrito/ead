@@ -75,8 +75,6 @@ export default {
             { title: 'Home', icon: 'dashboard', url: {name: 'admin.dashboard'} },
             { title: 'Categorias', icon: 'loyalty', url: {name: 'admin.categories'} },
             { title: 'Cursos', icon: 'shop', url: {name: 'admin.courses'} },
-            { title: 'Módulos', icon: 'web_asset', url: {name: 'admin.modules'} },
-            { title: 'Aulas', icon: 'subscriptions', url: {name: 'admin.courses'} },
         ]
         }
     },

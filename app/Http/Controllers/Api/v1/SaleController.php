@@ -35,7 +35,9 @@ class SaleController extends Controller
 
     public function store(StoreUpdateSaleFormRequest $request)
     {
-        $sale = $this->sale->create($request->all());
+        $data = $request->all();
+        $data['user_id'] = Auth::id();
+        $sale = $this->sale->create($data);
 
         return response()->json($sale, 201);
     }

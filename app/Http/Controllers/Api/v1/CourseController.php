@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Course;
 use App\Http\Requests\StoreUpdateCourseFormRequest;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 class CourseController extends Controller
 {
@@ -42,7 +43,7 @@ class CourseController extends Controller
     public function store(StoreUpdateCourseFormRequest $request)
     {
         $data = $request->all();
-
+        
         if ($request->hasFile('image') && $request->file('image')->isValid()) {
 
             $name = kebab_case($request->name);
@@ -56,6 +57,8 @@ class CourseController extends Controller
             if (!$upload)
                 return response()->json(['error' => 'Fail_Upload'], 500);
         }
+
+        $data['user_id'] = Auth::id();
 
         $course = $this->course->create($data);
 

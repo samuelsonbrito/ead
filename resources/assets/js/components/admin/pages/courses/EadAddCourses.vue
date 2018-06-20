@@ -49,7 +49,7 @@ export default {
       course:{
         id: '',
         name: '',
-        user_id: 1,
+        user_id: '',
         category_id: '',
       },
       errors: {},
@@ -92,7 +92,7 @@ export default {
 
       formData.append('id', this.course.id)
       formData.append('name', this.course.name)
-      formData.append('user_id', 1)
+      formData.append('user_id', this.course.user_id)
       formData.append('category_id', this.course.category_id)
 
       this.$store.dispatch('storeCourse', formData)
