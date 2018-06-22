@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 
 import store from '../store/store'
 
+import EadCampus from '../components/campus/EadCampus'
+import EadCampusDashboard from '../components/campus/pages/dashboard/EadDashboard'
 import EadModules from '../components/admin/pages/modules/EadModules'
 import EadAddModules from '../components/admin/pages/modules/EadAddModules'
 import EadCategories from '../components/admin/pages/categories/EadCategories'
@@ -38,27 +40,35 @@ const routes = [
 {
         path: '/admin', 
         component: EadAdmin,
-        meta: { auth: true },
+        meta: { auth: true, level: 1 },
         children: [
-                { path: 'modulos/create', component: EadAddModules, name: 'admin.modules.create' }, 
-                { path: 'modulos/:id/edit', component: EadAddModules, name: 'admin.modules.edit', props: true },
-                { path: 'modulos', component: EadModules, name:'admin.modules' },
-                { path: 'categorias/create', component: EadAddCategories, name: 'admin.categories.create' }, 
-                { path: 'categorias/:id/edit', component: EadAddCategories, name: 'admin.categories.edit', props: true },
-                { path: 'categorias', component: EadCategories, name:'admin.categories', meta: {auth: true} },
-                { path: 'cursos', component: EadCourses, name:'admin.courses' },
-                { path: 'cursos/create', component: EadAddCourses, name: 'admin.courses.create' }, 
-                { path: 'cursos/:id/edit', component: EadAddCourses, name: 'admin.courses.edit', props: true },
-                { path: 'cursos/:cid/modulos', component: EadCoursesModules, name:'admin.courses.modules' },
-                { path: 'cursos/:cid/modulos/create', component: EadAddCoursesModules, name:'admin.courses.modules.create' },
-                { path: 'cursos/:cid/modulos/:id/edit', component: EadAddCoursesModules, name:'admin.courses.modules.edit' },
-                { path: 'cursos/:cid/modulos/:mid/classrooms', component: EadCoursesModulesClassrooms, name:'admin.courses.modules.classrooms' },
-                { path: 'cursos/:cid/modulos/:mid/classrooms/create', component: EadAddCoursesModulesClassrooms, name:'admin.courses.modules.classrooms.create' },
-                { path: 'cursos/:cid/modulos/:mid/classrooms/:id/edit', component: EadAddCoursesModulesClassrooms, name:'admin.courses.modules.classrooms.edit' },
-                { path: '', component: EadDashboard, name:'admin.dashboard' },
+                { path: 'modulos/create', component: EadAddModules, name: 'admin.modules.create', meta: { auth: true, level: 1} }, 
+                { path: 'modulos/:id/edit', component: EadAddModules, name: 'admin.modules.edit', props: true, meta: { auth: true, level: 1} },
+                { path: 'modulos', component: EadModules, name:'admin.modules', meta: { auth: true, level: 1} },
+                { path: 'categorias/create', component: EadAddCategories, name: 'admin.categories.create', meta: { auth: true, level: 1} }, 
+                { path: 'categorias/:id/edit', component: EadAddCategories, name: 'admin.categories.edit', meta: { auth: true, level: 1} },
+                { path: 'categorias', component: EadCategories, name:'admin.categories', meta: { auth: true, level: 1} },
+                { path: 'cursos', component: EadCourses, name:'admin.courses', meta: { auth: true, level: 1} },
+                { path: 'cursos/create', component: EadAddCourses, name: 'admin.courses.create', meta: { auth: true, level: 1} }, 
+                { path: 'cursos/:id/edit', component: EadAddCourses, name: 'admin.courses.edit', props: true, meta: { auth: true, level: 1} },
+                { path: 'cursos/:cid/modulos', component: EadCoursesModules, name:'admin.courses.modules', meta: { auth: true, level: 1} },
+                { path: 'cursos/:cid/modulos/create', component: EadAddCoursesModules, name:'admin.courses.modules.create', meta: { auth: true, level: 1} },
+                { path: 'cursos/:cid/modulos/:id/edit', component: EadAddCoursesModules, name:'admin.courses.modules.edit', meta: { auth: true, level: 1} },
+                { path: 'cursos/:cid/modulos/:mid/classrooms', component: EadCoursesModulesClassrooms, name:'admin.courses.modules.classrooms', meta: { auth: true, level: 1} },
+                { path: 'cursos/:cid/modulos/:mid/classrooms/create', component: EadAddCoursesModulesClassrooms, name:'admin.courses.modules.classrooms.create', meta: { auth: true, level: 1} },
+                { path: 'cursos/:cid/modulos/:mid/classrooms/:id/edit', component: EadAddCoursesModulesClassrooms, name:'admin.courses.modules.classrooms.edit', meta: { auth: true, level: 1} },
+                { path: '', component: EadDashboard, name:'admin.dashboard', meta: { auth: true, level: 1} },
 
         ]
 },
+{
+        path: '/campus', 
+        component: EadCampus,
+        meta: { auth: true },
+        children: [
+                { path: '', component: EadCampusDashboard, name:'campus.dashboard', meta: { auth: true, level: 2}  },
+        ]
+}
 
 ]
 
@@ -67,6 +77,13 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
+
+
+        if(to.meta.auth && store.state.auth.authenticated && to.meta.level != store.state.auth.user.level){
+                localStorage.removeItem('token_auth')
+                store.commit('AUTH_USER_LOGOFF')
+                router.push({ name: 'login' })
+        }
 
         if(to.meta.auth && !store.state.auth.authenticated){
                 store.commit('UPDATE_URL_BACK', to.name)
@@ -79,7 +96,13 @@ router.beforeEach((to, from, next) => {
         }
 
         if(to.meta.hasOwnProperty('auth') && !to.meta.auth && store.state.auth.authenticated){
-                return router.push({ name: 'admin.dashboard' })
+
+                if(store.state.auth.user.level == 1){
+                        return router.push({ name: 'admin.dashboard' })
+                }else{
+                        return router.push({ name: 'campus.dashboard' })
+                }
+                
         }
 
         next()

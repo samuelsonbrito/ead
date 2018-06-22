@@ -39,7 +39,15 @@
     methods:{
         onSubmit(){
             this.$store.dispatch('login', this.user)
-                .then(() => this.$router.push({name: 'admin.dashboard'}))
+                .then(() => {
+                  
+                  if(this.$store.state.auth.user.level == 1){
+                    this.$router.push({name: 'admin.dashboard'})
+                  }else{
+                    this.$router.push({name: 'campus.dashboard'})
+                  }
+                   
+                })
         },
     }
   }

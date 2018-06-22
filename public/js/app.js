@@ -36700,40 +36700,46 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(106);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__store_store__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_admin_pages_modules_EadModules__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_admin_pages_modules_EadModules___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_admin_pages_modules_EadModules__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_admin_pages_modules_EadAddModules__ = __webpack_require__(132);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_admin_pages_modules_EadAddModules___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_admin_pages_modules_EadAddModules__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_admin_pages_categories_EadCategories__ = __webpack_require__(135);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_admin_pages_categories_EadCategories___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_admin_pages_categories_EadCategories__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_admin_pages_courses_EadCourses__ = __webpack_require__(140);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_admin_pages_courses_EadCourses___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__components_admin_pages_courses_EadCourses__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_admin_pages_courses_EadCoursesModules__ = __webpack_require__(145);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_admin_pages_courses_EadCoursesModules___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__components_admin_pages_courses_EadCoursesModules__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_admin_pages_courses_EadAddCoursesModules__ = __webpack_require__(150);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_admin_pages_courses_EadAddCoursesModules___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__components_admin_pages_courses_EadAddCoursesModules__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_admin_pages_courses_EadCoursesModulesClassrooms__ = __webpack_require__(155);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_admin_pages_courses_EadCoursesModulesClassrooms___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__components_admin_pages_courses_EadCoursesModulesClassrooms__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_admin_pages_courses_EadAddCoursesModulesClassrooms__ = __webpack_require__(160);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_admin_pages_courses_EadAddCoursesModulesClassrooms___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__components_admin_pages_courses_EadAddCoursesModulesClassrooms__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_admin_pages_dashboard_EadDashboard__ = __webpack_require__(165);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_admin_pages_dashboard_EadDashboard___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__components_admin_pages_dashboard_EadDashboard__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_admin_EadAdmin__ = __webpack_require__(170);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_admin_EadAdmin___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12__components_admin_EadAdmin__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_admin_pages_categories_EadAddCategories__ = __webpack_require__(175);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_admin_pages_categories_EadAddCategories___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13__components_admin_pages_categories_EadAddCategories__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_admin_pages_courses_EadAddCourses__ = __webpack_require__(180);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_admin_pages_courses_EadAddCourses___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14__components_admin_pages_courses_EadAddCourses__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_site_pages_home_EadHome__ = __webpack_require__(185);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_site_pages_home_EadHome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15__components_site_pages_home_EadHome__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_site_EadSite__ = __webpack_require__(200);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_site_EadSite___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16__components_site_EadSite__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_site_pages_contact_EadContact__ = __webpack_require__(212);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_site_pages_contact_EadContact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_17__components_site_pages_contact_EadContact__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_site_pages_course_EadCourseDetail__ = __webpack_require__(214);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_site_pages_course_EadCourseDetail___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_18__components_site_pages_course_EadCourseDetail__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_site_pages_login_EadLogin__ = __webpack_require__(219);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_site_pages_login_EadLogin___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_19__components_site_pages_login_EadLogin__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_campus_EadCampus__ = __webpack_require__(353);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_campus_EadCampus___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_campus_EadCampus__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_campus_pages_dashboard_EadDashboard__ = __webpack_require__(348);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_campus_pages_dashboard_EadDashboard___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_campus_pages_dashboard_EadDashboard__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_admin_pages_modules_EadModules__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_admin_pages_modules_EadModules___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__components_admin_pages_modules_EadModules__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_admin_pages_modules_EadAddModules__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_admin_pages_modules_EadAddModules___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__components_admin_pages_modules_EadAddModules__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_admin_pages_categories_EadCategories__ = __webpack_require__(135);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_admin_pages_categories_EadCategories___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__components_admin_pages_categories_EadCategories__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_admin_pages_courses_EadCourses__ = __webpack_require__(140);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_admin_pages_courses_EadCourses___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8__components_admin_pages_courses_EadCourses__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_admin_pages_courses_EadCoursesModules__ = __webpack_require__(145);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_admin_pages_courses_EadCoursesModules___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__components_admin_pages_courses_EadCoursesModules__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_admin_pages_courses_EadAddCoursesModules__ = __webpack_require__(150);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_admin_pages_courses_EadAddCoursesModules___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__components_admin_pages_courses_EadAddCoursesModules__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_admin_pages_courses_EadCoursesModulesClassrooms__ = __webpack_require__(155);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_admin_pages_courses_EadCoursesModulesClassrooms___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__components_admin_pages_courses_EadCoursesModulesClassrooms__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_admin_pages_courses_EadAddCoursesModulesClassrooms__ = __webpack_require__(160);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_admin_pages_courses_EadAddCoursesModulesClassrooms___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12__components_admin_pages_courses_EadAddCoursesModulesClassrooms__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_admin_pages_dashboard_EadDashboard__ = __webpack_require__(165);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_admin_pages_dashboard_EadDashboard___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13__components_admin_pages_dashboard_EadDashboard__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_admin_EadAdmin__ = __webpack_require__(170);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_admin_EadAdmin___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14__components_admin_EadAdmin__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_admin_pages_categories_EadAddCategories__ = __webpack_require__(175);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_admin_pages_categories_EadAddCategories___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15__components_admin_pages_categories_EadAddCategories__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_admin_pages_courses_EadAddCourses__ = __webpack_require__(180);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_admin_pages_courses_EadAddCourses___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16__components_admin_pages_courses_EadAddCourses__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_site_pages_home_EadHome__ = __webpack_require__(185);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_site_pages_home_EadHome___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_17__components_site_pages_home_EadHome__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_site_EadSite__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_site_EadSite___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_18__components_site_EadSite__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_site_pages_contact_EadContact__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_site_pages_contact_EadContact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_19__components_site_pages_contact_EadContact__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_site_pages_course_EadCourseDetail__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_site_pages_course_EadCourseDetail___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_20__components_site_pages_course_EadCourseDetail__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_site_pages_login_EadLogin__ = __webpack_require__(219);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_site_pages_login_EadLogin___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_21__components_site_pages_login_EadLogin__);
+
+
 
 
 
@@ -36761,13 +36767,18 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
 
 var routes = [{
         path: '/',
-        component: __WEBPACK_IMPORTED_MODULE_16__components_site_EadSite___default.a,
-        children: [{ path: 'login', component: __WEBPACK_IMPORTED_MODULE_19__components_site_pages_login_EadLogin___default.a, name: 'login', meta: { auth: false } }, { path: 'cursos/:id', component: __WEBPACK_IMPORTED_MODULE_18__components_site_pages_course_EadCourseDetail___default.a, name: 'course.detail', props: true }, { path: '', component: __WEBPACK_IMPORTED_MODULE_15__components_site_pages_home_EadHome___default.a, name: 'home' }, { path: 'contato', component: __WEBPACK_IMPORTED_MODULE_17__components_site_pages_contact_EadContact___default.a, name: 'contact' }]
+        component: __WEBPACK_IMPORTED_MODULE_18__components_site_EadSite___default.a,
+        children: [{ path: 'login', component: __WEBPACK_IMPORTED_MODULE_21__components_site_pages_login_EadLogin___default.a, name: 'login', meta: { auth: false } }, { path: 'cursos/:id', component: __WEBPACK_IMPORTED_MODULE_20__components_site_pages_course_EadCourseDetail___default.a, name: 'course.detail', props: true }, { path: '', component: __WEBPACK_IMPORTED_MODULE_17__components_site_pages_home_EadHome___default.a, name: 'home' }, { path: 'contato', component: __WEBPACK_IMPORTED_MODULE_19__components_site_pages_contact_EadContact___default.a, name: 'contact' }]
 }, {
         path: '/admin',
-        component: __WEBPACK_IMPORTED_MODULE_12__components_admin_EadAdmin___default.a,
+        component: __WEBPACK_IMPORTED_MODULE_14__components_admin_EadAdmin___default.a,
+        meta: { auth: true, level: 1 },
+        children: [{ path: 'modulos/create', component: __WEBPACK_IMPORTED_MODULE_6__components_admin_pages_modules_EadAddModules___default.a, name: 'admin.modules.create', meta: { auth: true, level: 1 } }, { path: 'modulos/:id/edit', component: __WEBPACK_IMPORTED_MODULE_6__components_admin_pages_modules_EadAddModules___default.a, name: 'admin.modules.edit', props: true, meta: { auth: true, level: 1 } }, { path: 'modulos', component: __WEBPACK_IMPORTED_MODULE_5__components_admin_pages_modules_EadModules___default.a, name: 'admin.modules', meta: { auth: true, level: 1 } }, { path: 'categorias/create', component: __WEBPACK_IMPORTED_MODULE_15__components_admin_pages_categories_EadAddCategories___default.a, name: 'admin.categories.create', meta: { auth: true, level: 1 } }, { path: 'categorias/:id/edit', component: __WEBPACK_IMPORTED_MODULE_15__components_admin_pages_categories_EadAddCategories___default.a, name: 'admin.categories.edit', meta: { auth: true, level: 1 } }, { path: 'categorias', component: __WEBPACK_IMPORTED_MODULE_7__components_admin_pages_categories_EadCategories___default.a, name: 'admin.categories', meta: { auth: true, level: 1 } }, { path: 'cursos', component: __WEBPACK_IMPORTED_MODULE_8__components_admin_pages_courses_EadCourses___default.a, name: 'admin.courses', meta: { auth: true, level: 1 } }, { path: 'cursos/create', component: __WEBPACK_IMPORTED_MODULE_16__components_admin_pages_courses_EadAddCourses___default.a, name: 'admin.courses.create', meta: { auth: true, level: 1 } }, { path: 'cursos/:id/edit', component: __WEBPACK_IMPORTED_MODULE_16__components_admin_pages_courses_EadAddCourses___default.a, name: 'admin.courses.edit', props: true, meta: { auth: true, level: 1 } }, { path: 'cursos/:cid/modulos', component: __WEBPACK_IMPORTED_MODULE_9__components_admin_pages_courses_EadCoursesModules___default.a, name: 'admin.courses.modules', meta: { auth: true, level: 1 } }, { path: 'cursos/:cid/modulos/create', component: __WEBPACK_IMPORTED_MODULE_10__components_admin_pages_courses_EadAddCoursesModules___default.a, name: 'admin.courses.modules.create', meta: { auth: true, level: 1 } }, { path: 'cursos/:cid/modulos/:id/edit', component: __WEBPACK_IMPORTED_MODULE_10__components_admin_pages_courses_EadAddCoursesModules___default.a, name: 'admin.courses.modules.edit', meta: { auth: true, level: 1 } }, { path: 'cursos/:cid/modulos/:mid/classrooms', component: __WEBPACK_IMPORTED_MODULE_11__components_admin_pages_courses_EadCoursesModulesClassrooms___default.a, name: 'admin.courses.modules.classrooms', meta: { auth: true, level: 1 } }, { path: 'cursos/:cid/modulos/:mid/classrooms/create', component: __WEBPACK_IMPORTED_MODULE_12__components_admin_pages_courses_EadAddCoursesModulesClassrooms___default.a, name: 'admin.courses.modules.classrooms.create', meta: { auth: true, level: 1 } }, { path: 'cursos/:cid/modulos/:mid/classrooms/:id/edit', component: __WEBPACK_IMPORTED_MODULE_12__components_admin_pages_courses_EadAddCoursesModulesClassrooms___default.a, name: 'admin.courses.modules.classrooms.edit', meta: { auth: true, level: 1 } }, { path: '', component: __WEBPACK_IMPORTED_MODULE_13__components_admin_pages_dashboard_EadDashboard___default.a, name: 'admin.dashboard', meta: { auth: true, level: 1 } }]
+}, {
+        path: '/campus',
+        component: __WEBPACK_IMPORTED_MODULE_3__components_campus_EadCampus___default.a,
         meta: { auth: true },
-        children: [{ path: 'modulos/create', component: __WEBPACK_IMPORTED_MODULE_4__components_admin_pages_modules_EadAddModules___default.a, name: 'admin.modules.create' }, { path: 'modulos/:id/edit', component: __WEBPACK_IMPORTED_MODULE_4__components_admin_pages_modules_EadAddModules___default.a, name: 'admin.modules.edit', props: true }, { path: 'modulos', component: __WEBPACK_IMPORTED_MODULE_3__components_admin_pages_modules_EadModules___default.a, name: 'admin.modules' }, { path: 'categorias/create', component: __WEBPACK_IMPORTED_MODULE_13__components_admin_pages_categories_EadAddCategories___default.a, name: 'admin.categories.create' }, { path: 'categorias/:id/edit', component: __WEBPACK_IMPORTED_MODULE_13__components_admin_pages_categories_EadAddCategories___default.a, name: 'admin.categories.edit', props: true }, { path: 'categorias', component: __WEBPACK_IMPORTED_MODULE_5__components_admin_pages_categories_EadCategories___default.a, name: 'admin.categories', meta: { auth: true } }, { path: 'cursos', component: __WEBPACK_IMPORTED_MODULE_6__components_admin_pages_courses_EadCourses___default.a, name: 'admin.courses' }, { path: 'cursos/create', component: __WEBPACK_IMPORTED_MODULE_14__components_admin_pages_courses_EadAddCourses___default.a, name: 'admin.courses.create' }, { path: 'cursos/:id/edit', component: __WEBPACK_IMPORTED_MODULE_14__components_admin_pages_courses_EadAddCourses___default.a, name: 'admin.courses.edit', props: true }, { path: 'cursos/:cid/modulos', component: __WEBPACK_IMPORTED_MODULE_7__components_admin_pages_courses_EadCoursesModules___default.a, name: 'admin.courses.modules' }, { path: 'cursos/:cid/modulos/create', component: __WEBPACK_IMPORTED_MODULE_8__components_admin_pages_courses_EadAddCoursesModules___default.a, name: 'admin.courses.modules.create' }, { path: 'cursos/:cid/modulos/:id/edit', component: __WEBPACK_IMPORTED_MODULE_8__components_admin_pages_courses_EadAddCoursesModules___default.a, name: 'admin.courses.modules.edit' }, { path: 'cursos/:cid/modulos/:mid/classrooms', component: __WEBPACK_IMPORTED_MODULE_9__components_admin_pages_courses_EadCoursesModulesClassrooms___default.a, name: 'admin.courses.modules.classrooms' }, { path: 'cursos/:cid/modulos/:mid/classrooms/create', component: __WEBPACK_IMPORTED_MODULE_10__components_admin_pages_courses_EadAddCoursesModulesClassrooms___default.a, name: 'admin.courses.modules.classrooms.create' }, { path: 'cursos/:cid/modulos/:mid/classrooms/:id/edit', component: __WEBPACK_IMPORTED_MODULE_10__components_admin_pages_courses_EadAddCoursesModulesClassrooms___default.a, name: 'admin.courses.modules.classrooms.edit' }, { path: '', component: __WEBPACK_IMPORTED_MODULE_11__components_admin_pages_dashboard_EadDashboard___default.a, name: 'admin.dashboard' }]
+        children: [{ path: '', component: __WEBPACK_IMPORTED_MODULE_4__components_campus_pages_dashboard_EadDashboard___default.a, name: 'campus.dashboard', meta: { auth: true, level: 2 } }]
 }];
 
 var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
@@ -36775,6 +36786,12 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
 });
 
 router.beforeEach(function (to, from, next) {
+
+        if (to.meta.auth && __WEBPACK_IMPORTED_MODULE_2__store_store__["a" /* default */].state.auth.authenticated && to.meta.level != __WEBPACK_IMPORTED_MODULE_2__store_store__["a" /* default */].state.auth.user.level) {
+                localStorage.removeItem('token_auth');
+                __WEBPACK_IMPORTED_MODULE_2__store_store__["a" /* default */].commit('AUTH_USER_LOGOFF');
+                router.push({ name: 'login' });
+        }
 
         if (to.meta.auth && !__WEBPACK_IMPORTED_MODULE_2__store_store__["a" /* default */].state.auth.authenticated) {
                 __WEBPACK_IMPORTED_MODULE_2__store_store__["a" /* default */].commit('UPDATE_URL_BACK', to.name);
@@ -36789,7 +36806,12 @@ router.beforeEach(function (to, from, next) {
         }
 
         if (to.meta.hasOwnProperty('auth') && !to.meta.auth && __WEBPACK_IMPORTED_MODULE_2__store_store__["a" /* default */].state.auth.authenticated) {
-                return router.push({ name: 'admin.dashboard' });
+
+                if (__WEBPACK_IMPORTED_MODULE_2__store_store__["a" /* default */].state.auth.user.level == 1) {
+                        return router.push({ name: 'admin.dashboard' });
+                } else {
+                        return router.push({ name: 'campus.dashboard' });
+                }
         }
 
         next();
@@ -46442,7 +46464,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             this.$store.dispatch('login', this.user).then(function () {
-                return _this.$router.push({ name: 'admin.dashboard' });
+
+                if (_this.$store.state.auth.user.level == 1) {
+                    _this.$router.push({ name: 'admin.dashboard' });
+                } else {
+                    _this.$router.push({ name: 'campus.dashboard' });
+                }
             });
         }
     }
@@ -77779,6 +77806,512 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 344 */,
+/* 345 */,
+/* 346 */,
+/* 347 */,
+/* 348 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(349)
+}
+var normalizeComponent = __webpack_require__(4)
+/* script */
+var __vue_script__ = __webpack_require__(351)
+/* template */
+var __vue_template__ = __webpack_require__(352)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-62e96482"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\campus\\pages\\dashboard\\EadDashboard.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-62e96482", Component.options)
+  } else {
+    hotAPI.reload("data-v-62e96482", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 349 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(350);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(6)("f1248ac4", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../../../node_modules/css-loader/index.js!../../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-62e96482\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./EadDashboard.vue", function() {
+     var newContent = require("!!../../../../../../../node_modules/css-loader/index.js!../../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-62e96482\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./EadDashboard.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 350 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(3)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 351 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+/* 352 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [_c("h1", [_vm._v("Home Dashboard")])])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-62e96482", module.exports)
+  }
+}
+
+/***/ }),
+/* 353 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(354)
+}
+var normalizeComponent = __webpack_require__(4)
+/* script */
+var __vue_script__ = __webpack_require__(356)
+/* template */
+var __vue_template__ = __webpack_require__(357)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-688bdc7e"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\campus\\EadCampus.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-688bdc7e", Component.options)
+  } else {
+    hotAPI.reload("data-v-688bdc7e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 354 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(355);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(6)("4cba74d7", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-688bdc7e\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./EadCampus.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-688bdc7e\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./EadCampus.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 355 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(3)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 356 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            drawer: null,
+            items: [{ title: 'Home', icon: 'dashboard', url: { name: 'admin.dashboard' } }, { title: 'Meus Cursos', icon: 'loyalty', url: { name: 'admin.categories' } }, { title: 'Comunidade', icon: 'shop', url: { name: 'admin.courses' } }]
+        };
+    },
+
+
+    computed: {
+        user: function user() {
+            return this.$store.state.auth.user;
+        }
+    },
+
+    methods: {
+        logoff: function logoff() {
+            this.$store.dispatch('logoff');
+            this.$router.push({ name: 'login' });
+        }
+    }
+
+});
+
+/***/ }),
+/* 357 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "v-app",
+    [
+      _c(
+        "v-navigation-drawer",
+        {
+          attrs: {
+            clipped: _vm.$vuetify.breakpoint.lgAndUp,
+            fixed: "",
+            app: ""
+          },
+          model: {
+            value: _vm.drawer,
+            callback: function($$v) {
+              _vm.drawer = $$v
+            },
+            expression: "drawer"
+          }
+        },
+        [
+          _c(
+            "v-list",
+            { staticClass: "pa-1" },
+            [
+              _c(
+                "v-list-tile",
+                { attrs: { avatar: "" } },
+                [
+                  _c("v-list-tile-avatar", [
+                    _c("img", { attrs: { src: "/image/user.png" } })
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "v-list-tile-content",
+                    [_c("v-list-tile-title", [_vm._v(_vm._s(_vm.user.name))])],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-list",
+            { staticClass: "pt-0", attrs: { dense: "" } },
+            [
+              _c("v-divider"),
+              _vm._v(" "),
+              _vm._l(_vm.items, function(item) {
+                return _c(
+                  "v-list-tile",
+                  { key: item.title, attrs: { to: item.url } },
+                  [
+                    _c(
+                      "v-list-tile-action",
+                      [_c("v-icon", [_vm._v(_vm._s(item.icon))])],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "v-list-tile-content",
+                      [_c("v-list-tile-title", [_vm._v(_vm._s(item.title))])],
+                      1
+                    )
+                  ],
+                  1
+                )
+              })
+            ],
+            2
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-toolbar",
+        {
+          attrs: {
+            "clipped-left": _vm.$vuetify.breakpoint.lgAndUp,
+            color: "blue darken-3",
+            dark: "",
+            app: "",
+            fixed: ""
+          }
+        },
+        [
+          _c("v-toolbar-side-icon", {
+            on: {
+              click: function($event) {
+                $event.stopPropagation()
+                _vm.drawer = !_vm.drawer
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("v-toolbar-title", [_vm._v("EAD")]),
+          _vm._v(" "),
+          _c("v-spacer"),
+          _vm._v(" "),
+          _c(
+            "v-menu",
+            { attrs: { "nudge-width": 100 } },
+            [
+              _c(
+                "v-toolbar-items",
+                { attrs: { slot: "activator" }, slot: "activator" },
+                [
+                  _c("v-btn", { attrs: { flat: "" } }, [
+                    _vm._v(_vm._s(_vm.user.name))
+                  ]),
+                  _vm._v(" "),
+                  _c("v-icon", { attrs: { dark: "" } }, [
+                    _vm._v("arrow_drop_down")
+                  ])
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-list",
+                [
+                  _c(
+                    "v-list-tile",
+                    {
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          return _vm.logoff($event)
+                        }
+                      }
+                    },
+                    [_c("v-list-tile-title", [_vm._v("Sair")])],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-content",
+        [
+          _c("v-container", { attrs: { fluid: "" } }, [
+            _c("div", { staticClass: "container" }, [_c("router-view")], 1)
+          ])
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-688bdc7e", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);
