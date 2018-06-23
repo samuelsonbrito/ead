@@ -16,7 +16,7 @@ class CreateCoursesTable extends Migration
         Schema::create('courses', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('url', 20)->unique()->nullable();
+            $table->string('url')->unique()->nullable();
             $table->string('description')->nullable();
             $table->string('image')->nullable();
             $table->integer('code')->unique()->nullable();

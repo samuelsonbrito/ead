@@ -72,8 +72,8 @@ export default {
         return {
             drawer: null,
             items: [
-            { title: 'Home', icon: 'dashboard', url: {name: 'admin.dashboard'} },
-            { title: 'Meus Cursos', icon: 'loyalty', url: {name: 'admin.categories'} },
+            { title: 'Home', icon: 'dashboard', url: {name: 'campus.dashboard'} },
+            { title: 'Meus Cursos', icon: 'loyalty', url: {name: 'campus.courses'} },
             { title: 'Comunidade', icon: 'shop', url: {name: 'admin.courses'} },
         ]
         }

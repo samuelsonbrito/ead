@@ -17,7 +17,7 @@ class CreateSalesTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->integer('course_id')->unsigned();
-            $table->string('transaction');
+            $table->string('transaction')->nullable();
             $table->enum('status', [
                 'started',
                 'approved',
@@ -31,8 +31,8 @@ class CreateSalesTable extends Migration
                 'chargeback',
                 'delayed',
                 'expired'
-            ]);
-            $table->date('date');
+            ])->nullable();
+            $table->date('date')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('course_id')->references('id')->on('courses');
             $table->timestamps();

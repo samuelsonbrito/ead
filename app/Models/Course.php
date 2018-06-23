@@ -33,6 +33,7 @@ class Course extends Model
                 $description = $data['description'];
                 $query->where('description', 'LIKE', '%{$description}%');
             }
+            
         })->paginate($total);
         
     }
@@ -45,5 +46,10 @@ class Course extends Model
     public function modules()
     {
         return $this->hasMany(Module::class);
+    }
+
+    public function sales()
+    {
+        return $this->hasMany(Sale::class);
     }
 }

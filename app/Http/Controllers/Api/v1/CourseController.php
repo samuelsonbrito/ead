@@ -64,6 +64,7 @@ class CourseController extends Controller
         }
 
         $data['user_id'] = Auth::id();
+        $data['url'] = str_slug($request->name,'-');
 
         $course = $this->course->create($data);
 
@@ -98,6 +99,8 @@ class CourseController extends Controller
                 return response()->json(['error' => 'Fail_Upload'], 500);
 
         }
+
+        //$data['url'] = str_slug($request->name,'-');
 
         $course->update($data);
         

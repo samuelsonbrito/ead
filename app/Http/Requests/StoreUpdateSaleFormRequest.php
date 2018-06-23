@@ -24,7 +24,8 @@ class StoreUpdateSaleFormRequest extends FormRequest
     public function rules()
     {
         return [
-            "name" => "required|min:3|max:50|unique:orders,name,{$this->id},id"
+            'user_id' => 'required',
+            'course_id' => 'required'
         ];
     }
 }

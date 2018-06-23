@@ -9,7 +9,7 @@
                 <option v-for="category in categories" :key="category.id" :value="category.id">{{ category.name }}</option>
             </select>
 
-            <input type="text" class="form-control mr-sm-2" v-model="filter">
+            <v-text-field type="text" class="form-control mr-sm-2" v-model="filter"></v-text-field>
             
             <button type="submit" class="btn btn-outline-success">Pesquisar</button>
 

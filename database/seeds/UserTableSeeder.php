@@ -12,14 +12,14 @@ class UserTableSeeder extends Seeder
     public function run()
     {
         App\Models\User::create([
-            'name' => 'Samuelson Brito',
+            'name' => 'Samuelson Admin',
             'email' => 'samuelson@descompila.com.br',
             'password' => bcrypt('123456'),
             'level' => 1
         ]);
 
         App\Models\User::create([
-            'name' => 'Samuelson Brito',
+            'name' => 'Samuelson Aluno',
             'email' => 'usuario@descompila.com.br',
             'password' => bcrypt('123456'),
             'level' => 2

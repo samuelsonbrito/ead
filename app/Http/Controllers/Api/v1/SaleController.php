@@ -6,19 +6,20 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Sale;
 use App\Http\Requests\StoreUpdateSaleFormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class SaleController extends Controller
 {
-    private $sale;
+    private $sale, $totalPage = 8;
 
-    public function __construct(Sale $course)
+    public function __construct(Sale $sale)
     {
         $this->sale = $sale;
     }
 
     public function index(Request $request)
     {
-        $sale = $this->sale->getResults();
+        $sale = $this->sale->getResults($request->all(), $this->totalPage);
 
         return response()->json($sale);
     }
@@ -64,5 +65,14 @@ class SaleController extends Controller
         $sale->delete();
 
         return response()->json(['success' => 'true'], 204);
+    }
+
+    public function mySales(Request $request)
+    {
+        $data['user_id'] = Auth::id();
+
+        $sale = $this->sale->getResults($data, $this->totalPage);
+
+        return response()->json($sale);
     }
 }

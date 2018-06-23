@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 
 import store from '../store/store'
 
+import EadSales from '../components/campus/pages/sales/EadSales'
+import EadSalesCourses from '../components/campus/pages/sales/EadSalesCourses'
 import EadCampus from '../components/campus/EadCampus'
 import EadCampusDashboard from '../components/campus/pages/dashboard/EadDashboard'
 import EadModules from '../components/admin/pages/modules/EadModules'
@@ -42,10 +44,10 @@ const routes = [
         component: EadAdmin,
         meta: { auth: true, level: 1 },
         children: [
-                { path: 'modulos/create', component: EadAddModules, name: 'admin.modules.create', meta: { auth: true, level: 1} }, 
+                { path: 'modulos/create', component: EadAddModules, name: 'admin.modules.create', props: true, meta: { auth: true, level: 1} }, 
                 { path: 'modulos/:id/edit', component: EadAddModules, name: 'admin.modules.edit', props: true, meta: { auth: true, level: 1} },
                 { path: 'modulos', component: EadModules, name:'admin.modules', meta: { auth: true, level: 1} },
-                { path: 'categorias/create', component: EadAddCategories, name: 'admin.categories.create', meta: { auth: true, level: 1} }, 
+                { path: 'categorias/create', component: EadAddCategories, name: 'admin.categories.create',props: true, meta: { auth: true, level: 1} }, 
                 { path: 'categorias/:id/edit', component: EadAddCategories, name: 'admin.categories.edit', meta: { auth: true, level: 1} },
                 { path: 'categorias', component: EadCategories, name:'admin.categories', meta: { auth: true, level: 1} },
                 { path: 'cursos', component: EadCourses, name:'admin.courses', meta: { auth: true, level: 1} },
@@ -67,6 +69,8 @@ const routes = [
         meta: { auth: true },
         children: [
                 { path: '', component: EadCampusDashboard, name:'campus.dashboard', meta: { auth: true, level: 2}  },
+                { path: 'meus-cursos', component: EadSales, name:'campus.courses', meta: { auth: true, level: 2}  },
+                { path: 'meus-cursos/:url', component: EadSalesCourses, name:'campus.courses.sales', meta: { auth: true, level: 2}  },
         ]
 }
 
