@@ -10,7 +10,7 @@ class Course extends Model
 
     public function getResults(array $data, int $total): object
     {
-        if(!isset($data['filter']) && !isset($data['name']) && !isset($data['description']) && !isset($data['category_id']))
+        if(!isset($data['filter']) && !isset($data['name']) && !isset($data['description']) && !isset($data['category_id']) && !isset($data['id']))
             return $this->with('category')->paginate($total);
                 
         return $this->with('category')->where(function($query) use ($data){
@@ -19,6 +19,10 @@ class Course extends Model
                 $filter = $data['filter'];
                 $query->where('name', $filter);
                 $query->orWhere('description', 'LIKE', '%{$filter}%');
+            }
+
+            if(isset($data['id'])){
+                $query->where('id', $data['id']);
             }
 
             if(isset($data['name'])){
@@ -36,6 +40,15 @@ class Course extends Model
             
         })->paginate($total);
         
+    }
+
+    public function getMyCourse(array $data)
+    {
+        return $this->with(array('modules' => function($query) use ($data){
+            $query->with('classrooms');
+        }))->whereHas('sales', function($query) use ($data){
+            $query->where('user_id', $data['user_id']);
+        })->where('url',$data['url'])->first();
     }
 
     public function category()

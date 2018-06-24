@@ -14,8 +14,6 @@ $this->group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function(){
     $this->apiResource('sales', 'SaleController');
     $this->apiResource('categories', 'CategoryController');
     $this->get('my-sales', 'SaleController@mySales');
+    $this->get('my-course/{url}', 'CourseController@myCourse');
     
 });
-
-
-

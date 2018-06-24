@@ -15,6 +15,12 @@ class SaleController extends Controller
     public function __construct(Sale $sale)
     {
         $this->sale = $sale;
+
+        $this->middleware('auth:api')->except([
+            'index',
+            'show',
+            //'myCourse'
+        ]);
     }
 
     public function index(Request $request)

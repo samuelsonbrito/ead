@@ -20,12 +20,15 @@ class CourseController extends Controller
         
         $this->middleware('auth:api')->except([
             'index',
-            'show'
+            'show',
+            //'myCourse'
         ]);
         
-        $this->middleware('check.permission:admin')->except([
-            'index','show'
-        ]);
+        //$this->middleware('check.permission:admin')->except([
+            //'index',
+            //'show',
+            //'myCourse'
+        //]);
     }
 
     public function index(Request $request)
@@ -121,5 +124,19 @@ class CourseController extends Controller
             }
 
         return response()->json(['success' => 'true'], 204);
+    }
+
+    public function myCourse($url)
+    {
+        $data['user_id'] = Auth::id();
+        $data['url'] = $url;
+
+        $course = $this->course->getMyCourse($data);
+
+        if(!$course)            
+            return response()->json(['error' => 'Not found'], 404);
+
+        return response()->json($course, 201);
+
     }
 }

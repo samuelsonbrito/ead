@@ -8,12 +8,12 @@ class Sale extends Model
 {
     protected $fillable = ['user_id', 'course_id', 'transaction', 'status'];
 
-    public function getResults(array $data, int $total): object
+    public function getResults(array $data, int $total = 8): object
     {
-        if(!isset($data['filter']) && !isset($data['user_id']) && !isset($data['course_id']) && !isset($data['status']))
+        if(!isset($data['filter']) && !isset($data['user_id']) && !isset($data['course_id']) && !isset($data['status']) && !isset($data['url']))
             return $this->with('course')->paginate($total);
                 
-        return $this->with('course')->where(function($query) use ($data){
+        return $this->where(function($query) use ($data){
 
             if(isset($data['user_id'])){
                 $query->where('user_id', $data['user_id']);
@@ -27,7 +27,14 @@ class Sale extends Model
                 $query->where('status', $data['status']);
             }
 
-        })->paginate($total);
+        })->with(array('course' => function($query) use ($data){
+
+            if(isset($data['url']))
+            {
+                $query->where('url', $data['url']);
+            }
+            
+        }))->paginate($total);
         
     }
 
