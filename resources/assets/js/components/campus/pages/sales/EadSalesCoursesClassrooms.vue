@@ -25,7 +25,7 @@
                 <v-card-text>
                     <div v-for="(classroom, index2) in module.classrooms" :key="index2">
                         
-                       <router-link :to="{name: 'campus.courses.sales.watch', params: {url: course.url, id: classroom.id}}">{{ classroom.name }}</router-link>
+                        {{ classroom.name }}
                         <br>
                     </div>
                 </v-card-text>

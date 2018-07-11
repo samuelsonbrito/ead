@@ -34,6 +34,7 @@ class Classroom extends Model
                 $description = $data['description'];
                 $query->where('description', 'LIKE', '%{$description}%');
             }
+            
         })->with('module')->paginate($total);
         
     }

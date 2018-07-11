@@ -5,6 +5,7 @@ import store from '../store/store'
 
 import EadSales from '../components/campus/pages/sales/EadSales'
 import EadSalesCourses from '../components/campus/pages/sales/EadSalesCourses'
+import EadSalesCoursesClassrooms from '../components/campus/pages/sales/EadSalesCoursesClassrooms'
 import EadCampus from '../components/campus/EadCampus'
 import EadCampusDashboard from '../components/campus/pages/dashboard/EadDashboard'
 import EadModules from '../components/admin/pages/modules/EadModules'
@@ -71,6 +72,7 @@ const routes = [
                 { path: '', component: EadCampusDashboard, name:'campus.dashboard', meta: { auth: true, level: 2}  },
                 { path: 'meus-cursos', component: EadSales, name:'campus.courses', meta: { auth: true, level: 2}  },
                 { path: 'meus-cursos/:url', component: EadSalesCourses, name:'campus.courses.sales', meta: { auth: true, level: 2}  },
+                { path: 'meus-cursos/:url/watch/:id', component: EadSalesCoursesClassrooms, name:'campus.courses.sales.watch', meta: { auth: true, level: 2}  },
         ]
 }
 

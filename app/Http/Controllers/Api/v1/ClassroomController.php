@@ -10,10 +10,14 @@ use App\Http\Requests\StoreUpdateClassroomFormRequest;
 class ClassroomController extends Controller
 {
     private $classroom, $totalPage = 8;
+    
 
     public function __construct(Classroom $classroom)
     {
         $this->classroom = $classroom;
+        $this->middleware('auth:api')->except([
+            
+        ]);
     }
 
     public function index(Request $request)
