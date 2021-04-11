@@ -1,19 +1,19 @@
 <?php
 
-$this->post('users','Api\UserController@store');
-$this->post('auth', 'Auth\AuthApiController@authenticate');
-$this->post('auth-refresh', 'Auth\AuthApiController@refreshToken');
-$this->get('me', 'Auth\AuthApiController@getAuthenticatedUser');
-$this->post('hotmart', 'Api\HotmartController@access');
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
-$this->group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function(){
+/*
+|--------------------------------------------------------------------------
+| API Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register API routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| is assigned the "api" middleware group. Enjoy building your API!
+|
+*/
 
-    $this->apiResource('classrooms', 'ClassroomController');
-    $this->apiResource('modules', 'ModuleController');
-    $this->apiResource('courses', 'CourseController');
-    $this->apiResource('sales', 'SaleController');
-    $this->apiResource('categories', 'CategoryController');
-    $this->get('my-sales', 'SaleController@mySales');
-    $this->get('my-course/{url}', 'CourseController@myCourse');
-    
+Route::middleware('auth:api')->get('/user', function (Request $request) {
+    return $request->user();
 });
